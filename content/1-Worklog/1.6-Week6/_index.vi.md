@@ -1,58 +1,25 @@
 ---
 title: "Worklog Tuần 6"
-date: 2024-01-01
-weight: 1
+date: 2026-10-26
+weight: 6
 chapter: false
 pre: " <b> 1.6. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
 
 ### Mục tiêu tuần 6:
-
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+- Nắm vững quy trình đóng gói (Publish) và triển khai một ứng dụng Backend thực tế viết bằng **ASP.NET Core Web API** lên máy chủ Linux trên AWS.
+- Cấu hình ứng dụng chạy bền bỉ dưới dạng Linux `systemd` service và mở kết nối truy cập tài liệu API (Swagger UI) từ Internet.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --- | --- | --- | --- |
+| 2 | - Xây dựng ứng dụng **Todo API** cơ bản bằng ASP.NET Core (hỗ trợ đầy đủ các endpoint `GET`, `POST`, `PUT`, `DELETE` và tích hợp Swagger UI) <br> - Chạy kiểm thử ứng dụng trên máy cá nhân, sau đó chạy lệnh `dotnet publish -c Release -o ./publish` để xuất ra gói tệp thực thi tối ưu | 26/10/2026 | 26/10/2026 | Microsoft .NET Docs |
+| 3 | - Khởi tạo máy chủ **EC2 Ubuntu** mới trên AWS và kết nối SSH <br> - Cài đặt **ASP.NET Core Runtime** phù hợp với phiên bản .NET của dự án trên Ubuntu server và kiểm tra bằng lệnh `dotnet --info` | 27/10/2026 | 27/10/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 4 | - Sử dụng lệnh `scp` để truyền toàn bộ thư mục `./publish` từ máy cá nhân lên thư mục `/var/www/todoapi` trên EC2 <br> - Chạy thử ứng dụng ở chế độ **Foreground** (`dotnet TodoApi.dll --urls "http://0.0.0.0:5000"`) để quan sát trực tiếp log khởi động và kiểm tra các lỗi thiếu thư viện (nếu có) | 28/10/2026 | 28/10/2026 | Thực hành cá nhân |
+| 5 | - Tạo tệp cấu hình dịch vụ `/etc/systemd/system/todoapi.service` với các tham số `WorkingDirectory`, `ExecStart`, `Restart=always`, `User=www-data` <br> - Kích hoạt dịch vụ bằng `sudo systemctl daemon-reload`, `sudo systemctl enable todoapi` và `sudo systemctl start todoapi` để API chạy ngầm ổn định | 29/10/2026 | 29/10/2026 | Linux Systemd Docs |
+| 6 | - Cấu hình **Security Group** của EC2 mở Inbound Rule cho cổng ứng dụng (Custom TCP Port 5000) <br> - Mở trình duyệt trên máy cá nhân, truy cập `http://<EC2-Public-IP>:5000/swagger` và thực hiện gọi thử các API tạo/xem/xóa dữ liệu thành công | 30/10/2026 | 30/10/2026 | Thực hành cá nhân |
 
 ### Kết quả đạt được tuần 6:
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+- Triển khai thành công ứng dụng ASP.NET Core Web API từ môi trường phát triển cá nhân lên hoạt động thực tế trên hạ tầng AWS EC2.
+- Ứng dụng tự động khởi chạy cùng hệ điều hành và tự động phục hồi nếu gặp sự cố nhờ quản lý qua `systemd` service.
+- Nắm vững cách gỡ lỗi (debug) kết nối mạng giữa cấu hình lắng nghe địa chỉ IP của ứng dụng (`0.0.0.0` thay vì chỉ `localhost`) và luật mở cổng của AWS Security Group.

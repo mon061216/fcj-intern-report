@@ -1,59 +1,25 @@
 ---
 title: "Worklog Tuần 10"
-date: 2024-01-01
-weight: 2
+date: 2026-11-23
+weight: 10
 chapter: false
 pre: " <b> 1.10. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
 
 ### Mục tiêu tuần 10:
-
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+- Phát triển hoàn chỉnh các dịch vụ Backend bằng **Java 21** và triển khai hạ tầng Serverless trên AWS cho dự án **Ask First (ScamProtection)**.
+- Hoàn thiện luồng xử lý tin nhắn đa phương thức (văn bản, hình ảnh, tệp tin, âm thanh) từ Telegram Bot và tính năng liên kết, gửi cảnh báo khẩn cấp tới người thân.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --- | --- | --- | --- |
+| 2 | - Khởi tạo cấu trúc dự án **Ask First** với Maven, Java 21 và AWS SAM (`template.yaml`) <br> - Thiết kế schema bảng **Amazon DynamoDB** để lưu trữ thông tin người dùng cao tuổi, mã liên kết gia đình (Family Link), lịch sử phiên kiểm tra nguy cơ và trạng thái cảnh báo | 23/11/2026 | 23/11/2026 | Thực hành dự án |
+| 3 | - Phát triển **Webhook Receiver Lambda** kết nối với **API Gateway**: tiếp nhận sự kiện từ **Telegram Bot API** (hỗ trợ kiểm thử cục bộ qua ngrok và webhook thật trên AWS), xác thực token bí mật, đẩy payload vào **Amazon SQS** và phản hồi trạng thái `200 OK` ngay lập tức để tránh Telegram gửi lặp tin nhắn | 24/11/2026 | 24/11/2026 | Telegram Bot API Docs |
+| 4 | - Phát triển **Multimodal Worker Lambda** lắng nghe sự kiện từ SQS: <br>&emsp; + Xử lý tải tệp phương tiện (hình ảnh biên lai/tin nhắn chụp màn hình, file đính kèm, tệp âm thanh/voice note) từ máy chủ Telegram và lưu trữ an toàn vào **Amazon S3** (cấu hình Lifecycle tự động xóa sau thời gian ngắn để bảo vệ quyền riêng tư) <br>&emsp; + Chuyển đổi âm thanh sang văn bản (Speech-to-Text) và gửi dữ liệu đa phương thức sang **Amazon Bedrock** kèm Prompt chuyên biệt để đánh giá mức độ rủi ro lừa đảo | 25/11/2026 | 25/11/2026 | Amazon Bedrock & S3 Docs |
+| 5 | - Phát triển luồng **Liên kết người thân & Cảnh báo tự động**: <br>&emsp; + Xây dựng chức năng tạo mã kết nối giữa tài khoản Telegram của người cao tuổi và người thân giám hộ <br>&emsp; + Khi Bedrock đánh giá mức độ nguy cơ cao, hệ thống tự động định dạng lời khuyên dễ hiểu gửi lại cho người cao tuổi, đồng thời bắn thông báo cảnh báo chi tiết kèm bằng chứng tới Telegram của người thân | 26/11/2026 | 26/11/2026 | Thực hành dự án |
+| 6 | - Triển khai toàn bộ stack lên AWS thông qua lệnh `sam build` và `sam deploy` <br> - Cấu hình **Environment Variables** / AWS Systems Manager Parameter Store để quản lý Telegram Bot Token, cấu hình IAM Role cho từng Lambda theo nguyên tắc Least Privilege và kiểm tra log tập trung trên **CloudWatch** | 27/11/2026 | 27/11/2026 | AWS SAM Deployment |
 
 ### Kết quả đạt được tuần 10:
-
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+- Hoàn thiện hệ thống Backend Serverless **Ask First** chạy thực tế trên AWS, tích hợp mượt mà với Telegram Bot.
+- Người cao tuổi có thể gửi trực tiếp tin nhắn văn bản, ảnh chụp màn hình, tệp tin hoặc ghi âm giọng nói để bot phân tích nguy cơ lừa đảo và nhận phản hồi trực quan, dễ hiểu.
+- Cơ chế cảnh báo đa tầng hoạt động chính xác: vừa trấn an và hướng dẫn người cao tuổi phòng tránh, vừa kịp thời báo động cho người thân can thiệp.

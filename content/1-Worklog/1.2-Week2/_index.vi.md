@@ -1,59 +1,25 @@
 ---
 title: "Worklog Tuần 2"
-date: 2024-01-01
-weight: 1
+date: 2026-09-28
+weight: 2
 chapter: false
 pre: " <b> 1.2. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
 
 ### Mục tiêu tuần 2:
-
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+- Làm chủ môi trường dòng lệnh Linux (CLI) – nền tảng vận hành của hơn 90% máy chủ Cloud hiện nay.
+- Hiểu cách thức quản lý tiến trình (Process), dịch vụ nền (Service), phân quyền hệ thống và cấu hình mạng (IP, Port, Firewall, SSH) để đưa một ứng dụng lên chạy trên máy chủ từ xa.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --- | --- | --- | --- |
+| 2 | - So sánh sự khác biệt cốt lõi giữa Windows Server và Linux (kiến trúc nhân, giao diện dòng lệnh, cơ chế phân quyền, hiệu năng và chi phí bản quyền) <br> - Tìm hiểu khái niệm **Terminal**, **Shell** (Bash/Zsh) và cấu trúc hệ thống tệp tin chuẩn FHS trên Linux (`/etc` chứa file cấu hình, `/var/log` chứa log, `/home` chứa dữ liệu người dùng, `/usr/bin` chứa chương trình) | 28/09/2026 | 28/09/2026 | Linux Journey |
+| 3 | - **Thực hành thao tác CLI:** <br>&emsp; + Quản lý thư mục và tệp tin: `ls -la`, `cd`, `pwd`, `mkdir -p`, `cp -r`, `mv`, `rm -rf` <br>&emsp; + Đọc và lọc nội dung file: `cat`, `less`, `head`, `tail -f`, `grep` <br>&emsp; + Phân quyền truy cập file và thư mục bằng `chmod` (dạng số như `755`, `644`, `400` và dạng ký tự `u+x`) và chuyển quyền sở hữu bằng `chown` | 29/09/2026 | 29/09/2026 | Ubuntu Documentation |
+| 4 | - Phân biệt **Program** (tệp thực thi nằm trên ổ đĩa), **Process** (tiến trình đang nạp trên RAM có PID riêng) và **Service** (tiến trình chạy ngầm được quản lý bởi `systemd`) <br> - Thực hành kiểm tra tài nguyên với `ps aux`, `top`/`htop`, `kill -9` và quản lý service qua `systemctl status/start/stop/enable` <br> - Phân biệt chế độ chạy **Foreground** (chiếm dụng terminal, in log trực tiếp) và **Background** (chạy ngầm, ghi log ra file hoặc `journalctl`) | 30/09/2026 | 30/09/2026 | Linux Journey |
+| 5 | - Nghiên cứu kiến trúc mạng máy chủ: <br>&emsp; + Sự khác nhau giữa **Public IP** (định tuyến trên Internet) và **Private IP** (dải mạng nội bộ theo chuẩn RFC 1918 như `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) <br>&emsp; + Cách tính toán số lượng địa chỉ IP khả dụng từ ký hiệu **CIDR** (ví dụ `/16`, `/24`), vai trò của **Subnet** và **Default Gateway** <br>&emsp; + Cơ chế lọc gói tin của **Firewall** (`ufw` / `iptables`) dựa trên địa chỉ IP nguồn, giao thức (TCP/UDP) và Port đích | 01/10/2026 | 01/10/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 6 | - Nghiên cứu cơ chế mã hóa bất đối xứng của giao thức **SSH** (Port 22) sử dụng cặp khóa **Public Key** (lưu trên server tại `~/.ssh/authorized_keys`) và **Private Key** (giữ bí mật ở máy client) <br> - **Thực hành:** Dùng lệnh `ssh-keygen` tạo cặp khóa RSA/Ed25519, phân quyền `chmod 400` cho Private Key và thực hiện kết nối SSH vào máy ảo Linux thành công | 02/10/2026 | 02/10/2026 | Thực hành cá nhân |
 
 ### Kết quả đạt được tuần 2:
-
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+- Thành thạo bộ lệnh Linux thiết yếu phục vụ việc quản trị file, tìm kiếm log lỗi và phân quyền bảo mật trên server.
+- Hiểu rõ vòng đời của một ứng dụng trên Linux: từ lúc khởi chạy thủ công dưới dạng Process đến khi đóng gói thành Service tự động phục hồi khi server khởi động lại.
+- Nắm vững điều kiện tiên quyết để một client kết nối được tới ứng dụng trên server: Server phải có Public IP, ứng dụng phải lắng nghe trên đúng Port và Firewall phải mở luật (Inbound Rule) cho Port đó.
