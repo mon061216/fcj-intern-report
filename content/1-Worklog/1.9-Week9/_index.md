@@ -1,57 +1,25 @@
 ---
 title: "Week 9 Worklog"
-date: 2024-01-01
-weight: 1
+date: 2026-11-16
+weight: 9
 chapter: false
 pre: " <b> 1.9. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 9 Objectives:
+- Master the **Event-Driven Serverless** architecture mindset on AWS, clearly understanding the differences between traditional server models (EC2/ECS) and serverless models (AWS Lambda).
+- Become proficient with **AWS SAM (Serverless Application Model)** to define Infrastructure as Code (IaC), run local emulations on **LocalStack**, and integrate the generative AI service **Amazon Bedrock**.
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
-
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+### Tasks to Implement This Week:
+| Day | Task | Start Date | Completion Date | Reference Materials |
+| --- | --- | --- | --- | --- |
+| Mon | - Deep-dived into **AWS Lambda** architecture (execution lifecycle, *Cold Start* behavior with Java 21, memory/timeout management, concurrency) and **Amazon API Gateway** (HTTP API vs. REST API, ingesting third-party Webhooks) <br> - Studied the **Amazon SQS** message queuing service (Standard vs. FIFO Queues, Visibility Timeout, Dead Letter Queue - DLQ) for asynchronous processing | 16/11/2026 | 16/11/2026 | AWS Serverless Docs |
+| Tue | - Studied the NoSQL database **Amazon DynamoDB** (Partition Key, Sort Key, GSI, and On-Demand capacity mode for cost optimization on low-traffic applications) <br> - Explored **AWS SAM CLI**: `template.yaml` structure, defining Lambda, API Gateway, SQS, and DynamoDB resources, and configuring IAM Policies directly within the template | 17/11/2026 | 17/11/2026 | AWS SAM Documentation |
+| Wed | - **LocalStack Hands-on Practice:** Installed and configured **LocalStack** alongside `sam local` to test Lambda functions, SQS queues, and DynamoDB tables locally without repeatedly deploying to live AWS | 18/11/2026 | 18/11/2026 | LocalStack Documentation |
+| Thu | - Studied **Amazon Bedrock**: invoking Foundation Models (such as Claude/Nova) via the Bedrock Runtime API <br> - Explored **Multimodal** processing capabilities (analyzing text, reading image contents, and extracting file data) to detect scam indicators | 19/11/2026 | 19/11/2026 | Amazon Bedrock Docs |
+| Fri | - Analyzed real-world requirements and finalized the architecture for the **Ask First (ScamProtection)** project: justifying the decoupling between the Telegram Webhook ingestion flow (returning `200 OK` immediately in under 3 seconds) and the heavy AI processing flow via an SQS queue | 20/11/2026 | 20/11/2026 | Project Design Docs |
 
 ### Week 9 Achievements:
-
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+- Mastered the modern Serverless application development workflow using **Java 21** and **AWS SAM**, confidently declaring entire infrastructures as code (`template.yaml`).
+- Successfully set up a local development environment with **LocalStack**, shortening testing cycles and avoiding unnecessary costs during development.
+- Understood how to integrate **Amazon Bedrock** to analyze conversational context and multimodal content for scam scenario detection.

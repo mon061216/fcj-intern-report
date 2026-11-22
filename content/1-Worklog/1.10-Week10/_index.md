@@ -1,57 +1,25 @@
 ---
 title: "Week 10 Worklog"
 date: 2024-01-01
-weight: 2
+weight: 10
 chapter: false
 pre: " <b> 1.10. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 10 Objectives:
+- Fully develop Backend services using **Java 21** and deploy the Serverless infrastructure on AWS for the **Ask First (ScamProtection)** project.
+- Complete the multimodal message processing pipeline (text, images, files, audio) from the Telegram Bot, along with the family-linking and emergency alert features.
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
-
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+### Tasks to Implement This Week:
+| Day | Task | Start Date | Completion Date | Reference Materials |
+| --- | --- | --- | --- | --- |
+| Mon | - Initialized the **Ask First** project structure using Maven, Java 21, and AWS SAM (`template.yaml`) <br> - Designed the **Amazon DynamoDB** table schema to store elderly user profiles, Family Link pairing codes, risk check session history, and alert statuses | 23/11/2026 | 23/11/2026 | Project Practice |
+| Tue | - Developed the **Webhook Receiver Lambda** integrated with **API Gateway**: ingested events from the **Telegram Bot API** (supporting local testing via ngrok and live AWS webhooks), validated secret tokens, pushed payloads into **Amazon SQS**, and returned an immediate `200 OK` status to prevent Telegram from retrying duplicate messages | 24/11/2026 | 24/11/2026 | Telegram Bot API Docs |
+| Wed | - Developed the **Multimodal Worker Lambda** triggered by SQS events: <br>&emsp; + Downloaded media files (receipt/chat screenshots, attachments, audio files/voice notes) from Telegram servers and stored them securely in **Amazon S3** (configured with short-term Lifecycle auto-deletion to protect user privacy) <br>&emsp; + Transcribed audio to text (Speech-to-Text) and sent multimodal data to **Amazon Bedrock** with specialized prompts to assess scam risk levels | 25/11/2026 | 25/11/2026 | Amazon Bedrock & S3 Docs |
+| Thu | - Developed the **Family Linking & Automated Alert** workflow: <br>&emsp; + Built pairing code generation to link an elderly user's Telegram account with a family guardian <br>&emsp; + Triggered automated responses when Bedrock detects high risk: formatting easy-to-understand guidance for the elderly user while simultaneously dispatching detailed alerts with evidence to the family member's Telegram | 26/11/2026 | 26/11/2026 | Project Practice |
+| Fri | - Deployed the entire stack to AWS via `sam build` and `sam deploy` <br> - Configured **Environment Variables** / AWS Systems Manager Parameter Store to manage the Telegram Bot Token, assigned IAM Roles to each Lambda following the Least Privilege principle, and verified centralized logs on **CloudWatch** | 27/11/2026 | 27/11/2026 | AWS SAM Deployment |
 
 ### Week 10 Achievements:
-
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+- Completed the live **Ask First** Serverless Backend system on AWS, seamlessly integrated with the Telegram Bot.
+- Enabled elderly users to directly forward text messages, screenshots, files, or voice recordings for scam risk analysis and receive clear, accessible guidance.
+- Verified accurate operation of the multi-tiered alert mechanism: reassuring and advising elderly users while promptly notifying family members to intervene.

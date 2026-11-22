@@ -1,57 +1,25 @@
 ---
 title: "Week 4 Worklog"
-date: 2024-01-01
-weight: 1
+date: 2026-10-12
+weight: 4
 chapter: false
 pre: " <b> 1.4. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 4 Objectives:
+- Master the architecture, component concepts, and operational mechanisms of 6 core AWS services: **EC2, S3, RDS, VPC, IAM, and CloudWatch**.
+- Be able to read and interpret a complete AWS architecture diagram and explain the function of each service block within the system.
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
-
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+### Tasks to Implement This Week:
+| Day | Task | Start Date | Completion Date | Reference Materials |
+| --- | --- | --- | --- | --- |
+| Mon | - Studied **Amazon EC2 (Elastic Compute Cloud)**: <br>&emsp; + Hardware configuration via **Instance Types** (`t2.micro`, `t3.small`, etc.) and operating systems via **AMIs** (Amazon Machine Images) <br>&emsp; + Securing connections using **Key Pairs** and virtual firewalls via **Security Groups** (Stateful firewall) <br>&emsp; + Persistent storage with **EBS** (Elastic Block Store) and differences in data/billing across **Stop**, **Start**, and **Terminate** states | 12/10/2026 | 12/10/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| Tue | - Studied **Amazon S3 (Simple Storage Service)**: <br>&emsp; + Flat storage structure consisting of **Buckets** (globally unique names) and **Objects** (data + metadata + key) <br>&emsp; + Access control mechanisms via Block Public Access, Bucket Policies, and Presigned URLs <br>&emsp; + Data lifecycle management with **Versioning** (retaining multiple versions to prevent accidental deletion) and **Lifecycle Rules** (automatically transitioning objects to lower-cost storage classes like S3 Glacier or expiring old files) | 13/10/2026 | 13/10/2026 | AWS Documentation |
+| Wed | - Studied **Amazon RDS (Relational Database Service)**: <br>&emsp; + Benefits of an AWS-managed database service (automated OS patching, scheduled backups) with the **PostgreSQL** engine <br>&emsp; + How applications connect via the DNS **Endpoint** and default **Port 5432** <br>&emsp; + **Automated Backups**, Manual Snapshots, and the importance of disabling **Public Access** to isolate the database | 14/10/2026 | 14/10/2026 | AWS Documentation |
+| Thu | - Studied **Amazon VPC (Virtual Private Cloud)**: <br>&emsp; + Designing virtual private network ranges using **CIDR blocks** (e.g., `10.0.0.0/16`) <br>&emsp; + Segmenting **Public Subnets** (with routes pointing to an **Internet Gateway - IGW**, intended for Web Servers/Load Balancers) and **Private Subnets** (not directly exposed to the Internet, intended for internal Databases/Backends) <br>&emsp; + Configuring **Route Tables** and combining **Security Groups** (instance-level) with NACLs (subnet-level) | 15/10/2026 | 15/10/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| Fri | - Studied **AWS IAM**: distinguishing **Root User** (full privileges, used only for initial setup), **IAM User** (for human users), **IAM Group** (permission groups), **IAM Role** (granting temporary permissions to AWS services such as EC2 accessing S3 without hardcoding credentials), **Policy** (JSON documents defining `Allow`/`Deny` permissions), the **Least Privilege** principle, and **MFA** (Multi-Factor Authentication) <br> - Studied **Amazon CloudWatch**: collecting **Logs** (application logs), monitoring **Metrics** (CPU, RAM, Network utilization), and configuring automated **Alarms** | 16/10/2026 | 16/10/2026 | AWS Skill Builder |
 
 ### Week 4 Achievements:
-
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+- Systematized comprehensive theoretical knowledge of the 6 foundational services in the AWS ecosystem.
+- Understood how to combine VPC + Security Groups + IAM Roles to implement a multi-layered defense (Defense in Depth) for applications.
+- Confidently read and interpreted basic AWS architecture diagrams, tracing data flows and security mechanisms between components.

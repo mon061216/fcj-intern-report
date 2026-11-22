@@ -1,57 +1,25 @@
 ---
 title: "Week 2 Worklog"
-date: 2024-01-01
-weight: 1
+date: 2026-09-28
+weight: 2
 chapter: false
 pre: " <b> 1.2. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 2 Objectives:
+- Master the Linux Command Line Interface (CLI) – the operating foundation for over 90% of cloud servers today.
+- Understand how to manage processes, background services, system permissions, and network configurations (IP, Port, Firewall, SSH) to run an application on a remote server.
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
-
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+### Tasks to Implement This Week:
+| Day | Task | Start Date | Completion Date | Reference Materials |
+| --- | --- | --- | --- | --- |
+| Mon | - Compared core differences between Windows Server and Linux (kernel architecture, command-line interface, permission mechanisms, performance, and licensing costs) <br> - Learned the concepts of **Terminal**, **Shell** (Bash/Zsh), and the standard Linux Filesystem Hierarchy Standard (FHS) (`/etc` for configuration files, `/var/log` for logs, `/home` for user data, `/usr/bin` for user binaries/programs) | 28/09/2026 | 28/09/2026 | Linux Journey |
+| Tue | - **Hands-on CLI Practice:** <br>&emsp; + Directory and file management: `ls -la`, `cd`, `pwd`, `mkdir -p`, `cp -r`, `mv`, `rm -rf` <br>&emsp; + Reading and filtering file contents: `cat`, `less`, `head`, `tail -f`, `grep` <br>&emsp; + Managing file and directory permissions with `chmod` (numeric modes like `755`, `644`, `400` and symbolic modes like `u+x`) and changing ownership with `chown` | 29/09/2026 | 29/09/2026 | Ubuntu Documentation |
+| Wed | - Distinguished between a **Program** (executable file stored on disk), a **Process** (running instance loaded into RAM with a unique PID), and a **Service** (background process managed by `systemd`) <br> - Practiced inspecting system resources with `ps aux`, `top`/`htop`, `kill -9`, and managing services via `systemctl status/start/stop/enable` <br> - Distinguished between **Foreground** execution (occupies the terminal, prints logs directly) and **Background** execution (runs silently, writes logs to files or `journalctl`) | 30/09/2026 | 30/09/2026 | Linux Journey |
+| Thu | - Researched server networking architecture: <br>&emsp; + Differences between **Public IP** (routable over the Internet) and **Private IP** (internal network ranges per RFC 1918 such as `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) <br>&emsp; + Calculating the number of usable IP addresses from **CIDR** notation (e.g., `/16`, `/24`), and understanding the roles of **Subnets** and **Default Gateways** <br>&emsp; + Packet filtering mechanisms of **Firewalls** (`ufw` / `iptables`) based on source IP, protocol (TCP/UDP), and destination Port | 01/10/2026 | 01/10/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| Fri | - Studied the asymmetric encryption mechanism of the **SSH** protocol (Port 22) using a **Public Key** (stored on the server at `~/.ssh/authorized_keys`) and a **Private Key** (kept secret on the client machine) <br> - **Hands-on Practice:** Generated an RSA/Ed25519 key pair using `ssh-keygen`, set `chmod 400` permissions on the Private Key, and successfully established an SSH connection to a Linux virtual machine | 02/10/2026 | 02/10/2026 | Hands-on Practice |
 
 ### Week 2 Achievements:
-
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+- Mastered essential Linux commands for file administration, error log inspection, and server security permissions.
+- Understood the full lifecycle of an application on Linux: from manual execution as a Process to packaging it as a Service that automatically recovers upon server reboot.
+- Grasped the prerequisites for a client to connect to an application on a server: the server must have a Public IP, the application must listen on the correct Port, and the Firewall must allow traffic (Inbound Rule) for that Port.

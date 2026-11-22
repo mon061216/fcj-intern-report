@@ -1,57 +1,25 @@
 ---
-title: "Week 3 Worklog"
-date: 2024-01-01
-weight: 1
+title: "Worklog Week 3"
+date: 2026-10-05
+weight: 3
 chapter: false
 pre: " <b> 1.3. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 3 Objectives:
+- Grasp the mindset shift from physical on-premises infrastructure to Cloud Computing.
+- Understand AWS global infrastructure architecture, the Shared Responsibility Model, basic access management mechanisms, and pricing principles.
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
-
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+### Tasks to Implement This Week:
+| Day | Task | Start Date | Completion Date | Reference Materials |
+| --- | --- | --- | --- | --- |
+| Mon | - Compared **On-premises** and **Cloud Computing** in detail across upfront capital expenditure (CapEx vs. OpEx), deployment speed, scalability, and hardware maintenance <br> - Categorized the 4 core cloud resource pillars: **Compute** (processing power), **Storage** (unstructured/block data storage), **Database** (structured databases), and **Networking** (network connectivity infrastructure) | 05/10/2026 | 05/10/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| Tue | - Analyzed the management boundaries across the 3 service models: **IaaS** (Infrastructure as a Service – e.g., EC2), **PaaS** (Platform as a Service – e.g., Elastic Beanstalk, RDS), and **SaaS** (Software as a Service) <br> - Explored the characteristics and use cases of **Public Cloud**, **Private Cloud**, and **Hybrid Cloud** | 06/10/2026 | 06/10/2026 | AWS Skill Builder |
+| Wed | - Distinguished key distributed system design concepts: <br>&emsp; + **Scalability** (upgrading resources vertically via Vertical Scaling or adding nodes horizontally via Horizontal Scaling) vs. **Elasticity** (automatically scaling resources dynamically based on actual traffic) <br>&emsp; + **High Availability** (minimizing downtime) vs. **Fault Tolerance** (ensuring continuous, uninterrupted operation even when a component fails) | 07/10/2026 | 07/10/2026 | AWS Documentation |
+| Thu | - Studied AWS global infrastructure components: **AWS Region** (geographically isolated cluster of data centers), **Availability Zone - AZ** (each Region comprises multiple physically isolated AZs connected via ultra-high-speed fiber-optic networks for disaster recovery), and **Edge Location** (edge endpoints serving CloudFront CDN and Route 53 to reduce end-user latency) <br> - Analyzed the **Shared Responsibility Model**: AWS is responsible for security *of* the cloud (hardware, physical infrastructure, virtualization layer), while the customer is responsible for security *in* the cloud (data, source code, network configuration, IAM, guest OS) | 08/10/2026 | 08/10/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| Fri | - Explored an overview of **AWS IAM** (Identity and Access Management) for controlling Authentication and Authorization <br> - Researched the primary cost drivers on AWS: Compute time (running hours/seconds), Storage volume (GB/month), Data Transfer Out (outbound Internet traffic), and the **AWS Free Tier** policy | 09/10/2026 | 09/10/2026 | AWS Pricing Calculator |
 
 ### Week 3 Achievements:
-
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+- Developed a cloud architecture mindset, learning how to deploy resources across multiple Availability Zones (Multi-AZ) to achieve High Availability.
+- Clearly defined personal security responsibilities when deploying applications on AWS to avoid common misconfiguration vulnerabilities.
+- Understood basic cost estimation and AWS bill optimization principles (shutting down unused resources, leveraging the Free Tier, and minimizing unnecessary Data Transfer Out).s

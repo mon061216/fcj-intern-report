@@ -1,57 +1,25 @@
 ---
 title: "Week 1 Worklog"
-date: 2024-01-01
+date: 2026-09-21
 weight: 1
 chapter: false
 pre: " <b> 1.1. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 1 Objectives:
+- Connect and get acquainted with team members in the First Cloud AI Journey (FCAJ) internship program, and understand the rules and progress reporting procedures.
+- Gain a deep understanding of web network communication: how the Client sends requests, how the Backend processes logic, communicates with the Database, and returns responses via HTTP/HTTPS protocols.
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
-
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+### Tasks to Implement This Week:
+| Day | Task | Start Date | Completion Date | Reference Materials |
+| --- | --- | --- | --- | --- |
+| Mon | - Attended the Onboarding session starting September 20, getting to know the mentor and team members <br> - Carefully reviewed internship regulations, how to write worklogs on the Hugo platform, and source code management rules on GitHub | 21/09/2026 | 21/09/2026 | FCAJ Internal Documentation |
+| Tue | - Analyzed the 3-tier architecture: Frontend (Presentation), Backend (Business Logic), and Database (Data Storage) <br> - Studied the detailed structure of an **HTTP Request** (Request Line, Headers, Body) and **HTTP Response** (Status Line, Headers, Body) <br> - Researched the **JSON** data structure (Key-Value, Array, Nested Object) used for data exchange between services | 22/09/2026 | 22/09/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| Wed | - Studied **RESTful API** design standards and resource-based URL **Endpoint** naming conventions <br> - Clearly distinguished the semantics and idempotency of HTTP Methods: `GET` (retrieve), `POST` (create), `PUT` (full update), `PATCH` (partial update), `DELETE` (delete) <br> - Systematized **HTTP Status Code** groups: `2xx` (`200 OK`, `201 Created`, `204 No Content`), `4xx` (`400 Bad Request`, `401 Unauthorized`, `403 Forbidden`, `404 Not Found`), `5xx` (`500 Internal Server Error`, `502 Bad Gateway`) <br> - Explored content negotiation mechanisms using the `Content-Type` and `Accept` header pair | 23/09/2026 | 23/09/2026 | MDN Web Docs |
+| Thu | - Distinguished between **IP Address** (device identifier on a network), **Domain Name** (human-friendly name resolved via DNS), **Port** (application process identifier), and the local loopback address `localhost` (`127.0.0.1`) <br> - Compared the differences between **HTTP** (plaintext transmission, port 80) and **HTTPS** (encrypted transmission using SSL/TLS certificates, port 443) | 24/09/2026 | 24/09/2026 | MDN Web Docs |
+| Fri | - Studied the **12-Factor App** security principle of separating configuration from source code using **Environment Variables** <br> - **Hands-on Practice:** Used Postman and the `curl` CLI tool to send CRUD requests to a sample REST API, inspected Request/Response Headers and JSON Payloads in detail, and drew a data flow diagram from the browser down to the Database | 25/09/2026 | 25/09/2026 | Hands-on Practice |
 
 ### Week 1 Achievements:
-
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+- Integrated smoothly into the FCAJ working environment, mastering the 12-week roadmap and technical documentation standards.
+- Thoroughly explained the lifecycle of a data packet: from a user clicking a button on the Frontend -> DNS resolving the domain to an IP -> opening an HTTPS connection to the Backend Port -> Backend reading environment variables to connect to the Database -> querying data and packaging a JSON response with the corresponding Status Code.
+- Proficiently used Postman and `curl` to test APIs and debug errors based on HTTP status codes.
