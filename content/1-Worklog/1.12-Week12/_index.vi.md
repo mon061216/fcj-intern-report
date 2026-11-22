@@ -1,58 +1,25 @@
 ---
 title: "Worklog Tuần 12"
 date: 2024-01-01
-weight: 2
+weight: 12
 chapter: false
-pre: " <b> 1.12 </b> "
+pre: " <b> 1.12. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
 ### Mục tiêu tuần 12:
-
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+- Hoàn thiện trọn vẹn bộ tài liệu kỹ thuật, sơ đồ kiến trúc Event-Driven Serverless cho dự án **Ask First (ScamProtection)**.
+- Tổng kết toàn bộ quá trình 12 tuần thực tập tại First Cloud AI Journey, bảo vệ kết quả dự án và bàn giao tài nguyên.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --- | --- | --- | --- |
+| 2 | - Vẽ sơ đồ kiến trúc chi tiết của hệ thống **Ask First** (thể hiện rõ luồng dữ liệu từ Telegram -> API Gateway -> Webhook Lambda -> SQS -> Worker Lambda -> S3 / DynamoDB / Amazon Bedrock -> Telegram Alert tới người thân) | 07/12/2026 | 07/12/2026 | Draw.io / Mermaid |
+| 3 | - Biên soạn tệp `README.md` hoàn chỉnh cho repository dự án: mô tả bài toán bảo vệ người cao tuổi, giải thích kiến trúc hướng sự kiện, hướng dẫn chạy local với LocalStack/ngrok, quy trình deploy bằng `sam deploy` và bảng phân tích chi phí từng dịch vụ AWS | 08/12/2026 | 08/12/2026 | GitHub Repository |
+| 4 | - Rà soát, chuẩn hóa định dạng và hoàn thiện toàn bộ hệ thống Worklog 12 tuần trên trang báo cáo thực tập cá nhân | 09/12/2026 | 09/12/2026 | Tài liệu báo cáo FCAJ |
+| 5 | - Chuẩn bị slide thuyết trình và kịch bản demo trực tiếp trên điện thoại/Telegram: thử nghiệm gửi tin nhắn văn bản, hình ảnh, tệp tin và ghi âm lừa đảo để minh họa khả năng phát hiện rủi ro và bắn thông báo sang tài khoản người thân | 10/12/2026 | 10/12/2026 | Thực hành cá nhân |
+| 6 | - Tham gia buổi báo cáo tổng kết cuối kỳ thực tập với mentor, giải trình kiến trúc hệ thống (luồng đi của request, vai trò từng dịch vụ, điểm phát sinh lỗi/chi phí), tiếp thu đánh giá và hoàn tất dọn dẹp các tài nguyên thử nghiệm không cần thiết | 11/12/2026 | 11/12/2026 | Tổng kết FCAJ |
 
 ### Kết quả đạt được tuần 12:
-
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+- Hoàn thành xuất sắc dự án **Ask First (ScamProtection)** cùng bộ tài liệu kỹ thuật và sơ đồ kiến trúc chuyên nghiệp.
+- Nắm vững toàn diện cả hai mảng kiến thức: hạ tầng máy chủ truyền thống (EC2, VPC, RDS, Docker) và kiến trúc đám mây hiện đại (Serverless, Event-Driven, IaC với AWS SAM, GenAI với Amazon Bedrock).
+- Tự tin giải thích sâu sắc mọi khía cạnh kỹ thuật, bảo mật, xử lý sự cố và tối ưu chi phí của hệ thống trong buổi bảo vệ tổng kết thực tập First Cloud AI Journey.
