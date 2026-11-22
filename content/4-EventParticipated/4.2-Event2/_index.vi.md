@@ -1,125 +1,115 @@
 ---
-title: "Event 2"
-date: 2024-01-01
-weight: 1
+title: "Sự kiện 2"
+date: 2026-09-29
+weight: 2
 chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+# Báo cáo tóm tắt: “AWS Cloud and AI Day Hanoi 2026 - HCMC Watch Party”
 
-# Bài thu hoạch “GenAI-powered App-DB Modernization workshop”
+### Mục tiêu sự kiện
 
-### Mục Đích Của Sự Kiện
+- Cập nhật chiến lược ứng dụng Cloud/AI quy mô quốc gia, doanh nghiệp và xu hướng hạ tầng số
+- Tìm hiểu kiến trúc nền tảng đằng sau các dịch vụ đám mây tin cậy ("invisible engineering")
+- Nắm vững quy trình kiểm chứng chất lượng, giám sát (observability) và bảo mật cho phần mềm có sự hỗ trợ của AI
+- Kết nối cùng cộng đồng AWS tại điểm cầu Watch Party TP. Hồ Chí Minh ở tòa nhà Bitexco Financial Tower[cite: 2]
 
-- Chia sẻ best practices trong thiết kế ứng dụng hiện đại
-- Giới thiệu phương pháp DDD và event-driven architecture
-- Hướng dẫn lựa chọn compute services phù hợp
-- Giới thiệu công cụ AI hỗ trợ development lifecycle
+### Diễn giả
 
-### Danh Sách Diễn Giả
+- **Hoàng Minh** – Thứ trưởng Bộ Khoa học và Công nghệ
+- **Jennifer Wicks** – Đại sứ Hoa Kỳ tại Việt Nam
+- **Eric Yeo** – Tổng Giám đốc AWS khu vực Malaysia, Việt Nam và Đông Dương
+- **TS. Jens Lottner** – Tổng Giám đốc (CEO), Techcombank
+- **TS. Werner Vogels** – Giám đốc Công nghệ (CTO), Amazon.com
+- **Mai Le** – Giám đốc Quản lý Sản phẩm, Katalon
 
-- **Jignesh Shah** - Director, Open Source Databases
-- **Erica Liu** - Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** - Assc. Specialist SA, Serverless Amazon Web Services
+### Nội dung nổi bật
 
-### Nội Dung Nổi Bật
+#### Hạ tầng số và hệ sinh thái Cloud/AI
 
-#### Đưa ra các ảnh hưởng tiêu cực của kiến trúc ứng dụng cũ
+- Nhấn mạnh sự phát triển của AI gắn liền với năng lực hạ tầng tính toán, đội ngũ nhân lực kỹ thuật và sự hợp tác giữa doanh nghiệp, cơ quan quản lý và trường đại học.
+- Minh họa cách nền tảng đám mây thúc đẩy chuyển đổi số trong nhiều lĩnh vực như phân tích dữ liệu y tế, giám sát bán lẻ và nông nghiệp.
 
-- Thời gian release sản phẩm lâu → Mất doanh thu/bỏ lỡ cơ hội
-- Hoạt động kém hiệu quả → Mất năng suất, tốn kém chi phí
-- Không tuân thủ các quy định về bảo mật → Mất an ninh, uy tín
+#### Xuất phát từ bài toán của khách hàng
 
-#### Chuyển đổi sang kiến trúc ứng dụng mới - Microservice Architecture
+- Nhấn mạnh nguyên tắc xác định rõ bài toán nghiệp vụ, dữ liệu sẵn có và kết quả đo lường được trước khi lựa chọn dịch vụ AWS hay mô hình AI.
+- Phân tích các ví dụ triển khai thực tế cho thấy việc khoanh vùng bài toán đúng giúp tránh thiết kế dư thừa.
 
-Chuyển đổi thành hệ thống modular – từng chức năng là một **dịch vụ độc lập** giao tiếp với nhau qua **sự kiện** với 3 trụ cột cốt lõi:
+#### Tích hợp AI vào quy trình vận hành doanh nghiệp
 
-- **Queue Management**: Xử lý tác vụ bất đồng bộ
-- **Caching Strategy:** Tối ưu performance
-- **Message Handling:** Giao tiếp linh hoạt giữa services
+- Chia sẻ kinh nghiệm từ Techcombank về việc đưa AI xuyên suốt quy trình phát triển và vận hành thay vì chỉ dùng như một công cụ độc lập.
+- Đề cập đến việc gắn kết yêu cầu phần mềm với phát triển và kiểm thử, hỗ trợ xử lý sự cố, quản trị quyền truy cập và đào tạo đội ngũ.
 
-#### Domain-Driven Design (DDD)
+#### Kỹ thuật vận hành ẩn (Invisible Engineering) và hệ thống phân tán
 
-- **Phương pháp 4 bước**: Xác định domain events → sắp xếp timeline → identify actors → xác định bounded contexts
-- **Case study bookstore**: Minh họa cách áp dụng DDD thực tế
-- **Context mapping**: 7 patterns tích hợp bounded contexts
+- **TS. Werner Vogels** phân tích các quyết định kỹ thuật nền tảng phía sau dịch vụ đám mây: thấu hiểu mẫu truy cập dữ liệu và cân bằng giữa hiệu năng, tính cô lập (isolation) và độ tin cậy.
+- Giới thiệu **AWS Nitro System**, **AWS Lambda** và **Firecracker** như các lớp hạ tầng ẩn giúp vận hành Serverless an toàn, cùng **Amazon Time Sync Service** và **ClockBound** để xử lý đồng bộ thời gian trong hệ thống phân tán.
 
-#### Event-Driven Architecture
+#### Kiểm chứng phần mềm AI và quản lý "Nợ kiểm chứng" (Validation Debt)
 
-- **3 patterns tích hợp**: Publish/Subscribe, Point-to-point, Streaming
-- **Lợi ích**: Loose coupling, scalability, resilience
-- **So sánh sync vs async**: Hiểu rõ trade-offs (sự đánh đổi)
+- Diễn giả **Mai Le** (Katalon) chỉ ra khái niệm **validation debt** — khối lượng kiểm chứng bị dồn ứ khi AI tạo mã nguồn nhanh hơn tốc độ kiểm thử của đội ngũ.
+- Nhấn mạnh sự cần thiết của việc liên kết chặt chẽ từ yêu cầu, thay đổi mã nguồn, ca kiểm thử tự động đến dữ liệu giám sát thực tế (telemetry) để đưa ra quyết định phát hành dựa trên bằng chứng.
 
-#### Compute Evolution
+#### Bảo mật ứng dụng chủ động và hàng rào kiểm soát (Guardrails)
 
-- **Shared Responsibility Model**: Từ EC2 → ECS → Fargate → Lambda
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value
-- **Functions vs Containers**: Criteria lựa chọn phù hợp
+- Giới thiệu hướng tiếp cận bảo mật chủ động xuyên suốt vòng đời phát triển phần mềm (như AWS Security Agent) nhằm thu hẹp khoảng cách giữa tốc độ lập trình và kiểm thử an toàn thông tin.
+- Củng cố tầm quan trọng của các lớp kiểm soát (guardrails), phân quyền chặt chẽ và giám sát liên tục trong hệ thống doanh nghiệp.
 
-#### Amazon Q Developer
+### Bài học cốt lõi
 
-- **SDLC automation**: Từ planning đến maintenance
-- **Code transformation**: Java upgrade, .NET modernization
-- **AWS Transform agents**: VMware, Mainframe, .NET migration
+#### Tư duy kiến trúc và thiết kế
 
-### Những Gì Học Được
+- **Lấy bài toán làm trung tâm**: Xác định rõ người dùng mục tiêu, dữ liệu và chỉ số thành công trước khi chọn dịch vụ hay mô hình AI.
+- **Nền tảng kỹ thuật vững chắc**: Đánh giá đồng thời hiệu năng, tính cô lập, độ tin cậy và mô hình truy cập dữ liệu khi thiết kế hệ thống.
 
-#### Tư Duy Thiết Kế
+#### Chất lượng kỹ thuật và kiểm chứng
 
-- **Business-first approach**: Luôn bắt đầu từ business domain, không phải technology
-- **Ubiquitous language**: Importance của common vocabulary giữa business và tech teams
-- **Bounded contexts**: Cách identify và manage complexity trong large systems
+- **Kiểm soát nợ kiểm chứng**: Kết hợp tốc độ phát triển với kiểm thử tự động có thể truy vết, log có cấu trúc và dữ liệu đo lường thực nghiệm[cite: 2].
+- **Truy vết đầu cuối**: Gắn kết trực tiếp yêu cầu nghiệp vụ với bằng chứng kiểm thử trước khi đưa tính năng lên môi trường vận hành.
 
-#### Kiến Trúc Kỹ Thuật
+#### Quản trị và trách nhiệm con người
 
-- **Event storming technique**: Phương pháp thực tế để mô hình hóa quy trình kinh doanh
-- Sử dụng **Event-driven communication** thay vì synchronous calls
-- **Integration patterns**: Hiểu khi nào dùng sync, async, pub/sub, streaming
-- **Compute spectrum**: Criteria chọn từ VM → containers → serverless
+- **Bảo mật ngay từ thiết kế**: Tích hợp quản trị quyền truy cập tối thiểu và bộ lọc an toàn ngay trong luồng xử lý AI[cite: 2].
+- **Trách nhiệm giám sát của con người**: Luôn duy trì vai trò đánh giá rủi ro và phê duyệt của con người khi ứng dụng AI vào thực tế[cite: 2].
 
-#### Chiến Lược Hiện Đại Hóa
+### Áp dụng vào công việc
 
-- **Phased approach**: Không rush, phải có roadmap rõ ràng
-- **7Rs framework**: Nhiều con đường khác nhau tùy thuộc vào đặc điểm của mỗi ứng dụng
-- **ROI measurement**: Cost reduction + business agility
+- **Áp dụng IAM Least Privilege & Guardrails cho dự án Ask First**: Tách biệt IAM Role cho từng hàm Lambda (`webhook`, `worker`, `ai`), kết hợp ẩn danh thông tin cá nhân cục bộ (Mask PII) với Amazon Bedrock Guardrails và vô hiệu hóa (defang) các đường dẫn nghi ngờ[cite: 1].
+- **Ngăn ngừa validation debt bằng kiểm thử tự động**: Xây dựng bộ dữ liệu đánh giá chuẩn và kiểm thử hợp đồng (`AiContractTest`) trong CI/CD để đo lường độ phủ phát hiện lừa đảo, tỷ lệ báo nhầm và tính đúng đắn của JSON Schema[cite: 1].
+- **Tăng cường giám sát hệ thống (Observability)**: Thiết lập log có cấu trúc và cảnh báo CloudWatch để theo dõi độ trễ đầu cuối, giới hạn gọi Bedrock và cơ chế dự phòng[cite: 1].
+- **Duy trì yếu tố con người trong vòng lặp (Human-in-the-loop)**: Thiết kế cơ chế liên kết đồng thuận hai chiều (double opt-in) để người thân nhận cảnh báo kịp thời và chủ động gọi điện xác minh cho người cao tuổi[cite: 1].
 
-### Ứng Dụng Vào Công Việc
+### Trải nghiệm tại sự kiện
 
-- **Áp dụng DDD** cho project hiện tại: Event storming sessions với business team
-- **Refactor microservices**: Sử dụng bounded contexts để identify service boundaries
-- **Implement event-driven patterns**: Thay thế một số sync calls bằng async messaging
-- **Serverless adoption**: Pilot AWS Lambda cho một số use cases phù hợp
-- **Try Amazon Q Developer**: Integrate vào development workflow để boost productivity
+Tham dự chương trình **“AWS Cloud and AI Day Hanoi 2026 - HCMC Watch Party”** vào ngày 29/09/2026 tại tầng 26 tòa nhà Bitexco Financial Tower mang lại cho tôi góc nhìn toàn diện về cách xây dựng và vận hành hệ thống Cloud/AI an toàn, có kiểm chứng[cite: 2]. Những trải nghiệm nổi bật bao gồm:
 
-### Trải nghiệm trong event
+#### Học hỏi từ các diễn giả hàng đầu
+- Tiếp thu những chia sẻ sâu sắc từ **TS. Werner Vogels** về cách các công nghệ nền tảng như Nitro, Firecracker và ClockBound đảm bảo tính cô lập và độ tin cậy ở quy mô lớn.
+- Học hỏi kinh nghiệm thực tiễn từ **TS. Jens Lottner** và **Mai Le** về quản trị AI trong doanh nghiệp và cách giải quyết bài toán validation debt.
 
-Tham gia workshop **“GenAI-powered App-DB Modernization”** là một trải nghiệm rất bổ ích, giúp tôi có cái nhìn toàn diện về cách hiện đại hóa ứng dụng và cơ sở dữ liệu bằng các phương pháp và công cụ hiện đại. Một số trải nghiệm nổi bật:
+#### Tiếp cận góc nhìn kiến trúc và kỹ thuật
+- Hiểu rõ hơn các đánh đổi kỹ thuật xoay quanh môi trường thực thi Serverless, đồng bộ thời gian phân tán và bảo mật chủ động (Proactive AppSec).
+- Nắm vững cách kết hợp test tự động, log và telemetry làm bằng chứng đánh giá các thành phần AI[cite: 2].
 
-#### Học hỏi từ các diễn giả có chuyên môn cao
-- Các diễn giả đến từ AWS và các tổ chức công nghệ lớn đã chia sẻ **best practices** trong thiết kế ứng dụng hiện đại.
-- Qua các case study thực tế, tôi hiểu rõ hơn cách áp dụng **Domain-Driven Design (DDD)** và **Event-Driven Architecture** vào các project lớn.
+#### Khai thác công cụ hiện đại
+- Tìm hiểu cách các công cụ AI hỗ trợ phát triển phần mềm và kiểm tra bảo mật tự động giúp tăng năng suất khi đi kèm quy trình kiểm soát chặt chẽ.
 
-#### Trải nghiệm kỹ thuật thực tế
-- Tham gia các phiên trình bày về **event storming** giúp tôi hình dung cách **mô hình hóa quy trình kinh doanh** thành các domain events.
-- Học cách **phân tách microservices** và xác định **bounded contexts** để quản lý sự phức tạp của hệ thống lớn.
-- Hiểu rõ trade-offs giữa **synchronous và asynchronous communication** cũng như các pattern tích hợp như **pub/sub, point-to-point, streaming**.
-
-#### Ứng dụng công cụ hiện đại
-- Trực tiếp tìm hiểu về **Amazon Q Developer**, công cụ AI hỗ trợ SDLC từ lập kế hoạch đến maintenance.
-- Học cách **tự động hóa code transformation** và pilot serverless với **AWS Lambda**, từ đó nâng cao năng suất phát triển.
-
-#### Kết nối và trao đổi
-- Workshop tạo cơ hội trao đổi trực tiếp với các chuyên gia, đồng nghiệp và team business, giúp **nâng cao ngôn ngữ chung (ubiquitous language)** giữa business và tech.
-- Qua các ví dụ thực tế, tôi nhận ra tầm quan trọng của **business-first approach**, luôn bắt đầu từ nhu cầu kinh doanh thay vì chỉ tập trung vào công nghệ.
+#### Giao lưu và thảo luận
+- Trao đổi trực tiếp cùng các bạn thực tập sinh First Cloud AI Journey tại điểm cầu TP. Hồ Chí Minh về nội dung các phiên keynote và hướng áp dụng vào dự án nhóm[cite: 2].
 
 #### Bài học rút ra
-- Việc áp dụng DDD và event-driven patterns giúp giảm **coupling**, tăng **scalability** và **resilience** cho hệ thống.
-- Chiến lược hiện đại hóa cần **phased approach** và đo lường **ROI**, không nên vội vàng chuyển đổi toàn bộ hệ thống.
-- Các công cụ AI như Amazon Q Developer có thể **boost productivity** nếu được tích hợp vào workflow phát triển hiện tại.
+- Tốc độ phát triển nhanh nhưng thiếu kiểm chứng sẽ tạo ra nợ kỹ thuật; kiểm thử, log và metrics phải là bằng chứng bắt buộc trước khi phát hành[cite: 2].
+- Hệ thống AI đáng tin cậy đòi hỏi quản trị quyền truy cập chặt chẽ, bảo vệ dữ liệu riêng tư và trách nhiệm giám sát rõ ràng của con người[cite: 2].
 
-#### Một số hình ảnh khi tham gia sự kiện
-* Thêm các hình ảnh của các bạn tại đây
-> Tổng thể, sự kiện không chỉ cung cấp kiến thức kỹ thuật mà còn giúp tôi thay đổi cách tư duy về thiết kế ứng dụng, hiện đại hóa hệ thống và phối hợp hiệu quả hơn giữa các team.
+#### Một số hình ảnh tại sự kiện
+- ![Không gian Watch Party tại Bitexco](/images/4-Events/event2-venue.jpg)
+  *Không gian sự kiện AWS Cloud and AI Day Watch Party tại tầng 26, tòa nhà Bitexco Financial Tower.*
+- ![Thẻ tham dự và khu vực giao lưu](/images/4-Events/event2-badge.jpg)
+  *Thẻ tham dự sự kiện và khu vực giao lưu kết nối.*
+- ![Phiên phát biểu chính của Eric Yeo và TS. Werner Vogels](/images/4-Events/event2-keynote.jpg)
+  *Theo dõi phiên phát biểu chính được truyền hình trực tiếp từ Hà Nội.*
+- ![Phiên chia sẻ về bảo mật chủ động và kiểm chứng phần mềm](/images/4-Events/event2-appsec.jpg)
+  *Nội dung chia sẻ về bảo mật chủ động và hàng rào kiểm soát doanh nghiệp.*
+
+> Nhìn chung, sự kiện đã kết nối chiến lược ứng dụng Cloud/AI với các nguyên lý kỹ thuật hệ thống cốt lõi, định hướng trực tiếp cho cách tôi thiết kế bảo mật, kiểm thử và giám sát trong phần việc Backend của mình.

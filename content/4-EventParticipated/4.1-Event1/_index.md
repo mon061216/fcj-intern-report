@@ -1,126 +1,98 @@
 ---
 title: "Event 1"
-date: 2024-01-01
+date: 2026-09-26
 weight: 1
 chapter: false
 pre: " <b> 4.1. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy it verbatim** into your report, including this warning.
-{{% /notice %}}
-
-# Summary Report: “GenAI-powered App-DB Modernization workshop”
+# Summary Report: “Buildrathon Kickoff: Code the Future with CMC Global”
 
 ### Event Objectives
 
-- Share best practices in modern application design
-- Introduce Domain-Driven Design (DDD) and event-driven architecture
-- Provide guidance on selecting the right compute services
-- Present AI tools to support the development lifecycle
+- Introduce the Buildrathon program, its competition scope, and intended outcomes
+- Connect cloud and AI skills development with talent and infrastructure investment in Vietnam
+- Illustrate practical architectural patterns for organizing AI-powered applications
+- Foster technical networking among students, mentors, and industry engineers at Bitexco Financial Tower[cite: 2]
 
 ### Speakers
 
-- **Jignesh Shah** – Director, Open Source Databases
-- **Erica Liu** – Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** – Assc. Specialist SA, Serverless Amazon Web Services
+- **Nguyễn Gia Hưng** – Head of Solutions Architect, AWS Vietnam and Cambodia
+- **Bùi Nhật Trường** – Tech Lead, CMC Global
 
 ### Key Highlights
 
-#### Identifying the drawbacks of legacy application architecture
+#### Introducing Buildrathon and Cloud/AI Talent Development
 
-- Long product release cycles → Lost revenue/missed opportunities  
-- Inefficient operations → Reduced productivity, higher costs  
-- Non-compliance with security regulations → Security breaches, loss of reputation  
+- Presented the background, objectives, and strategic direction of the Buildrathon challenge.
+- Connected cloud and AI capability building with ongoing investments in digital infrastructure and future engineering talent in Vietnam.
+- Emphasized defining clear program objectives and scope before selecting technical solutions.
 
-#### Transitioning to modern application architecture – Microservices
+#### Market Slack Bot Architecture Example
 
-Migrating to a modular system — each function is an **independent service** communicating via **events**, built on three core pillars:
+Walked through a modular component diagram called **Market Slack Bot**, breaking down how an AI-powered bot operates across six layers[cite: 2]:
 
-- **Queue Management**: Handle asynchronous tasks  
-- **Caching Strategy**: Optimize performance  
-- **Message Handling**: Flexible inter-service communication  
+- **Slack**: Entry point receiving mentions, direct messages, and conversation context.
+- **Socket Mode / WebSocket**: Real-time connection layer linking Slack events to the bot workflow.
+- **Response gate**: Control and validation checkpoint governing responses before downstream execution.
+- **Claude Code**: Core AI processing component producing structured outputs (`print · JSON`).
+- **SOUL.md and Memory**: Configuration layer defining bot persona, scope boundaries, and conversation context.
+- **Bot schedule, internal API, cron and database**: Persistence and automation layer handling scheduled tasks, internal application functions, and data storage.
 
-#### Domain-Driven Design (DDD)
+#### Architectural Evaluation Criteria for AI Applications
 
-- **Four-step method**: Identify domain events → arrange timeline → identify actors → define bounded contexts  
-- **Bookstore case study**: Demonstrates real-world DDD application  
-- **Context mapping**: 7 patterns for integrating bounded contexts  
-
-#### Event-Driven Architecture
-
-- **3 integration patterns**: Publish/Subscribe, Point-to-point, Streaming  
-- **Benefits**: Loose coupling, scalability, resilience  
-- **Sync vs async comparison**: Understanding the trade-offs  
-
-#### Compute Evolution
-
-- **Shared Responsibility Model**: EC2 → ECS → Fargate → Lambda  
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value  
-- **Functions vs Containers**: Criteria for appropriate choice  
-
-#### Amazon Q Developer
-
-- **SDLC automation**: From planning to maintenance  
-- **Code transformation**: Java upgrade, .NET modernization  
-- **AWS Transform agents**: VMware, Mainframe, .NET migration  
+- Demonstrated how to evaluate an AI system end-to-end by tracing four key flows: how requests enter the system, how responses are controlled, where conversation context is stored, and how scheduled tasks are organized[cite: 2].
 
 ### Key Takeaways
 
-#### Design Mindset
+#### Problem-First Design Mindset
 
-- **Business-first approach**: Always start from the business domain, not the technology  
-- **Ubiquitous language**: Importance of a shared vocabulary between business and tech teams  
-- **Bounded contexts**: Identifying and managing complexity in large systems  
+- **Objective-first approach**: Always start with the program’s objective and problem scope before choosing a technical stack or AI model.
+- **System-level thinking**: Focus on how components interact, validate outputs, and manage state rather than focusing solely on the AI model.
 
-#### Technical Architecture
+#### Modular AI Application Architecture
 
-- **Event storming technique**: Practical method for modeling business processes  
-- Use **event-driven communication** instead of synchronous calls  
-- **Integration patterns**: When to use sync, async, pub/sub, streaming  
-- **Compute spectrum**: Criteria for choosing between VM, containers, and serverless  
-
-#### Modernization Strategy
-
-- **Phased approach**: No rushing — follow a clear roadmap  
-- **7Rs framework**: Multiple modernization paths depending on the application  
-- **ROI measurement**: Cost reduction + business agility  
+- **Four-pillar separation**: Organize an AI application cleanly into **request handling**, **processing**, **context management**, and **scheduled work**[cite: 2].
+- **Controlled and structured execution**: Use response gates and structured JSON outputs (`print · JSON`) to keep AI workflows predictable and reliable.
 
 ### Applying to Work
 
-- **Apply DDD** to current projects: Event storming sessions with business teams  
-- **Refactor microservices**: Use bounded contexts to define service boundaries  
-- **Implement event-driven patterns**: Replace some sync calls with async messaging  
-- **Adopt serverless**: Pilot AWS Lambda for suitable use cases  
-- **Try Amazon Q Developer**: Integrate into the dev workflow to boost productivity  
+- **Apply four-pillar separation to the Ask First project**: Structure our anti-scam Telegram bot backend cleanly across webhook ingestion, message/AI processing, DynamoDB state/consent management, and SQS scheduled follow-up reminders[cite: 1, 2].
+- **Implement response gating and guardrails**: Enforce strict validation rules, local PII masking, and Bedrock Guardrails before delivering automated scam warnings to elderly users and linked family members[cite: 1].
+- **Manage conversation state reliably**: Use DynamoDB with TTL policies to track user consent, multi-message debouncing, and guardian alert acknowledgments without retaining stale context[cite: 1].
+- **Enforce structured data contracts**: Define strict JSON schemas between the Java backend and Python AI pipeline to ensure predictable integration and automated testing[cite: 1].
 
 ### Event Experience
 
-Attending the **“GenAI-powered App-DB Modernization”** workshop was extremely valuable, giving me a comprehensive view of modernizing applications and databases using advanced methods and tools. Key experiences included:
+Attending the **“Buildrathon Kickoff: Code the Future with CMC Global”** on September 26, 2026 at Bitexco Financial Tower gave me a clear perspective on how real-world AI assistants are architected beyond simple prompt-response demos[cite: 2]. Key experiences included:
 
-#### Learning from highly skilled speakers
-- Experts from AWS and major tech organizations shared **best practices** in modern application design.  
-- Through real-world case studies, I gained a deeper understanding of applying **DDD** and **Event-Driven Architecture** to large projects.  
+#### Learning from industry leaders
+- **Nguyễn Gia Hưng** (Head of Solutions Architect, AWS Vietnam and Cambodia) shared valuable context on Vietnam's cloud and AI ecosystem and how Buildrathon bridges academic learning with industry expectations.
+- **Bùi Nhật Trường** (Tech Lead, CMC Global) walked through a concrete, production-oriented blueprint for an AI-powered Slack bot[cite: 2].
 
-#### Hands-on technical exposure
-- Participating in **event storming** sessions helped me visualize how to **model business processes** into domain events.  
-- Learned how to **split microservices** and define **bounded contexts** to manage large-system complexity.  
-- Understood trade-offs between **synchronous and asynchronous communication** and integration patterns like **pub/sub, point-to-point, streaming**.  
-
-#### Leveraging modern tools
-- Explored **Amazon Q Developer**, an AI tool for SDLC support from planning to maintenance.  
-- Learned to **automate code transformation** and pilot serverless with **AWS Lambda** to improve productivity.  
+#### Architectural and technical exposure
+- Analyzed the **Market Slack Bot** diagram to see how **Socket Mode / WebSocket**, **Response gates**, and **Memory** work together to control conversation flow.
+- Understood why separating **request handling**, **processing**, **context management**, and **scheduled work** makes AI bots easier to debug, scale, and maintain[cite: 2].
 
 #### Networking and discussions
-- The workshop offered opportunities to exchange ideas with experts, peers, and business teams, enhancing the **ubiquitous language** between business and tech.  
-- Real-world examples reinforced the importance of the **business-first approach** rather than focusing solely on technology.  
+- Connected with fellow First Cloud AI Journey interns and engineers at Bitexco Financial Tower, exchanging ideas on structuring backend workflows and state storage for AI-assisted applications[cite: 2].
 
 #### Lessons learned
-- Applying DDD and event-driven patterns reduces **coupling** while improving **scalability** and **resilience**.  
-- Modernization requires a **phased approach** with **ROI measurement**; rushing the process can be risky.  
-- AI tools like Amazon Q Developer can significantly **boost productivity** when integrated into the current workflow.  
+- Starting with clear problem boundaries prevents over-engineering during hackathons and internships.
+- Building reliable AI applications depends heavily on surrounding engineering components—gates, memory stores, structured JSON outputs, and scheduled jobs—rather than the LLM alone.
 
 #### Some event photos
-*Add your event photos here*  
+- ![Presentation at the Buildrathon Kickoff](/images/4-Events/event1-presentation.jpg)
+  *Presentation at the Buildrathon Kickoff.*
+- ![Slide on AWS investment in Vietnam](/images/4-Events/event1-aws-investment.jpg)
+  *Slide on AWS investment in Vietnam.*
+- ![Technical presentation on the Market Slack Bot architecture](/images/4-Events/event1-tech-session.jpg)
+  *Technical presentation on the Market Slack Bot architecture.*
+- ![Market Slack Bot diagram shown at the event](/images/4-Events/event1-architecture-diagram.jpg)
+  *Market Slack Bot diagram shown at the event.*
+- ![Group photo at the Buildrathon event](/images/4-Events/event1-group-1.jpg)
+  *Group photo at the Buildrathon event.*
+- ![Group photo of Buildrathon Kickoff attendees](/images/4-Events/event1-group-2.jpg)
+  *Group photo of Buildrathon Kickoff attendees.*
 
-> Overall, the event not only provided technical knowledge but also helped me reshape my thinking about application design, system modernization, and cross-team collaboration.
+> Overall, the kickoff event not only clarified the direction of Buildrathon but also provided a practical architectural blueprint that I directly applied to structuring our serverless AI bot backend.

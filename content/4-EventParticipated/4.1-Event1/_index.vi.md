@@ -1,125 +1,98 @@
 ---
-title: "Event 1"
-date: 2024-01-01
+title: "Sự kiện 1"
+date: 2026-09-26
 weight: 1
 chapter: false
 pre: " <b> 4.1. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+# Báo cáo tóm tắt: “Buildrathon Kickoff: Code the Future with CMC Global”
 
-# Bài thu hoạch “GenAI-powered App-DB Modernization workshop”
+### Mục tiêu sự kiện
 
-### Mục Đích Của Sự Kiện
+- Giới thiệu tổng quan về chương trình Buildrathon, phạm vi cuộc thi và các mục tiêu đầu ra kỳ vọng
+- Kết nối việc phát triển kỹ năng Cloud và AI với định hướng đầu tư nhân lực và hạ tầng công nghệ tại Việt Nam
+- Minh họa các mẫu kiến trúc thực tế khi tổ chức và xây dựng ứng dụng tích hợp AI
+- Tạo cơ hội giao lưu, kết nối kỹ thuật giữa sinh viên, mentor và các kỹ sư tại tòa nhà Bitexco Financial Tower[cite: 2]
 
-- Chia sẻ best practices trong thiết kế ứng dụng hiện đại
-- Giới thiệu phương pháp DDD và event-driven architecture
-- Hướng dẫn lựa chọn compute services phù hợp
-- Giới thiệu công cụ AI hỗ trợ development lifecycle
+### Diễn giả
 
-### Danh Sách Diễn Giả
+- **Nguyễn Gia Hưng** – Head of Solutions Architect, AWS Vietnam and Cambodia
+- **Bùi Nhật Trường** – Tech Lead, CMC Global
 
-- **Jignesh Shah** - Director, Open Source Databases
-- **Erica Liu** - Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** - Assc. Specialist SA, Serverless Amazon Web Services
+### Nội dung nổi bật
 
-### Nội Dung Nổi Bật
+#### Giới thiệu Buildrathon và phát triển nhân lực Cloud/AI
 
-#### Đưa ra các ảnh hưởng tiêu cực của kiến trúc ứng dụng cũ
+- Trình bày bối cảnh, mục tiêu và định hướng của thử thách Buildrathon.
+- Gắn kết việc rèn luyện kỹ năng điện toán đám mây và AI với làn sóng đầu tư vào hạ tầng số và nguồn nhân lực công nghệ tương lai tại Việt Nam.
+- Nhấn mạnh tầm quan trọng của việc xác định rõ mục tiêu và phạm vi bài toán trước khi lựa chọn giải pháp kỹ thuật.
 
-- Thời gian release sản phẩm lâu → Mất doanh thu/bỏ lỡ cơ hội
-- Hoạt động kém hiệu quả → Mất năng suất, tốn kém chi phí
-- Không tuân thủ các quy định về bảo mật → Mất an ninh, uy tín
+#### Ví dụ kiến trúc Market Slack Bot
 
-#### Chuyển đổi sang kiến trúc ứng dụng mới - Microservice Architecture
+Phiên chia sẻ kỹ thuật phân tích sơ đồ kiến trúc **Market Slack Bot**, minh họa cách một chatbot AI vận hành qua 6 thành phần chính[cite: 2]:
 
-Chuyển đổi thành hệ thống modular – từng chức năng là một **dịch vụ độc lập** giao tiếp với nhau qua **sự kiện** với 3 trụ cột cốt lõi:
+- **Slack**: Điểm tiếp nhận các lượt nhắc tên (mentions), tin nhắn trực tiếp và ngữ cảnh hội thoại.
+- **Socket Mode / WebSocket**: Lớp kết nối thời gian thực đưa sự kiện từ Slack vào luồng xử lý của bot.
+- **Response gate**: Cổng kiểm soát và xác thực phản hồi trước khi chuyển sang bước xử lý tiếp theo.
+- **Claude Code**: Thành phần xử lý AI cốt lõi, xuất dữ liệu có cấu trúc dưới dạng `print · JSON`.
+- **SOUL.md và Memory**: Lớp cấu hình giọng điệu, phạm vi hoạt động và lưu trữ ngữ cảnh hội thoại.
+- **Bot schedule, internal API, cron và database**: Lớp tự động hóa và lưu trữ đảm nhiệm tác vụ định kỳ, các hàm nghiệp vụ nội bộ và cơ sở dữ liệu.
 
-- **Queue Management**: Xử lý tác vụ bất đồng bộ
-- **Caching Strategy:** Tối ưu performance
-- **Message Handling:** Giao tiếp linh hoạt giữa services
+#### Tiêu chí đánh giá kiến trúc ứng dụng AI
 
-#### Domain-Driven Design (DDD)
+- Minh họa cách đánh giá toàn diện một kiến trúc AI thông qua 4 luồng cốt lõi: cách yêu cầu đi vào hệ thống, cách kiểm soát phản hồi đầu ra, nơi lưu trữ ngữ cảnh hội thoại và cách tổ chức các tác vụ chạy định kỳ[cite: 2].
 
-- **Phương pháp 4 bước**: Xác định domain events → sắp xếp timeline → identify actors → xác định bounded contexts
-- **Case study bookstore**: Minh họa cách áp dụng DDD thực tế
-- **Context mapping**: 7 patterns tích hợp bounded contexts
+### Bài học cốt lõi
 
-#### Event-Driven Architecture
+#### Tư duy thiết kế xuất phát từ bài toán
 
-- **3 patterns tích hợp**: Publish/Subscribe, Point-to-point, Streaming
-- **Lợi ích**: Loose coupling, scalability, resilience
-- **So sánh sync vs async**: Hiểu rõ trade-offs (sự đánh đổi)
+- **Ưu tiên mục tiêu và phạm vi**: Luôn bắt đầu từ mục tiêu và phạm vi của bài toán trước khi lựa chọn công nghệ hay mô hình AI.
+- **Tư duy hệ thống tổng thể**: Chú trọng cách các thành phần tương tác, kiểm soát luồng dữ liệu và quản lý trạng thái thay vì chỉ tập trung vào bản thân mô hình AI.
 
-#### Compute Evolution
+#### Kiến trúc ứng dụng AI mô-đun hóa
 
-- **Shared Responsibility Model**: Từ EC2 → ECS → Fargate → Lambda
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value
-- **Functions vs Containers**: Criteria lựa chọn phù hợp
+- **Phân tách 4 trụ cột**: Tổ chức ứng dụng AI rõ ràng theo 4 phần: **tiếp nhận yêu cầu (request handling)**, **xử lý nghiệp vụ (processing)**, **quản lý ngữ cảnh (context management)** và **tác vụ định kỳ (scheduled work)**[cite: 2].
+- **Thực thi có kiểm soát và có cấu trúc**: Sử dụng các cổng kiểm soát phản hồi (response gate) cùng định dạng đầu ra JSON chuẩn hóa (`print · JSON`) để đảm bảo luồng xử lý AI ổn định và dễ kiểm chứng.
 
-#### Amazon Q Developer
+### Áp dụng vào công việc
 
-- **SDLC automation**: Từ planning đến maintenance
-- **Code transformation**: Java upgrade, .NET modernization
-- **AWS Transform agents**: VMware, Mainframe, .NET migration
+- **Áp dụng mô hình phân tách 4 trụ cột vào dự án Ask First**: Tổ chức phần Backend của bot Telegram phòng chống lừa đảo tách bạch giữa tiếp nhận webhook, xử lý tin nhắn/AI, quản lý trạng thái & sự đồng ý của người dùng trên DynamoDB, và nhắc nhở cảnh báo định kỳ qua SQS[cite: 1, 2].
+- **Xây dựng lớp kiểm soát phản hồi (Response Gate & Guardrails)**: Áp dụng các luật kiểm tra cứng, ẩn danh thông tin cá nhân cục bộ (Mask PII) và Bedrock Guardrails trước khi gửi cảnh báo lừa đảo tới người cao tuổi và người thân[cite: 1].
+- **Quản lý ngữ cảnh và trạng thái tin cậy**: Sử dụng DynamoDB kết hợp TTL để lưu trạng thái đồng ý, gom cụm tin nhắn liên tiếp (debounce) và xác nhận đã liên hệ từ người thân[cite: 1].
+- **Chuẩn hóa hợp đồng dữ liệu JSON**: Thiết lập JSON Schema chặt chẽ giữa Backend Java và pipeline AI Python để đảm bảo tích hợp chính xác và dễ dàng kiểm thử tự động[cite: 1].
 
-### Những Gì Học Được
+### Trải nghiệm tại sự kiện
 
-#### Tư Duy Thiết Kế
+Tham dự buổi **“Buildrathon Kickoff: Code the Future with CMC Global”** vào ngày 26/09/2026 tại tòa nhà Bitexco Financial Tower giúp tôi có cái nhìn thực tế về cách thiết kế một trợ lý AI hoàn chỉnh vượt ra ngoài các bản demo hỏi-đáp đơn thuần[cite: 2]. Những trải nghiệm đáng nhớ bao gồm:
 
-- **Business-first approach**: Luôn bắt đầu từ business domain, không phải technology
-- **Ubiquitous language**: Importance của common vocabulary giữa business và tech teams
-- **Bounded contexts**: Cách identify và manage complexity trong large systems
+#### Học hỏi từ các diễn giả giàu kinh nghiệm
+- Anh **Nguyễn Gia Hưng** (Head of Solutions Architect, AWS Vietnam and Cambodia) chia sẻ bức tranh tổng quan về hệ sinh thái Cloud/AI tại Việt Nam và định hướng kết nối sinh viên với bài toán thực tế thông qua Buildrathon.
+- Anh **Bùi Nhật Trường** (Tech Lead, CMC Global) trình bày chi tiết bản thiết kế kiến trúc thực chiến của một Slack Bot tích hợp AI[cite: 2].
 
-#### Kiến Trúc Kỹ Thuật
+#### Tiếp cận kiến trúc và kỹ thuật thực tế
+- Phân tích sơ đồ **Market Slack Bot** để hiểu rõ cách **Socket Mode / WebSocket**, **Response gate** và **Memory** phối hợp kiểm soát luồng hội thoại.
+- Nắm vững lý do việc tách biệt **tiếp nhận yêu cầu**, **xử lý**, **quản lý ngữ cảnh** và **tác vụ định kỳ** giúp hệ thống AI dễ gỡ lỗi, mở rộng và bảo trì hơn[cite: 2].
 
-- **Event storming technique**: Phương pháp thực tế để mô hình hóa quy trình kinh doanh
-- Sử dụng **Event-driven communication** thay vì synchronous calls
-- **Integration patterns**: Hiểu khi nào dùng sync, async, pub/sub, streaming
-- **Compute spectrum**: Criteria chọn từ VM → containers → serverless
-
-#### Chiến Lược Hiện Đại Hóa
-
-- **Phased approach**: Không rush, phải có roadmap rõ ràng
-- **7Rs framework**: Nhiều con đường khác nhau tùy thuộc vào đặc điểm của mỗi ứng dụng
-- **ROI measurement**: Cost reduction + business agility
-
-### Ứng Dụng Vào Công Việc
-
-- **Áp dụng DDD** cho project hiện tại: Event storming sessions với business team
-- **Refactor microservices**: Sử dụng bounded contexts để identify service boundaries
-- **Implement event-driven patterns**: Thay thế một số sync calls bằng async messaging
-- **Serverless adoption**: Pilot AWS Lambda cho một số use cases phù hợp
-- **Try Amazon Q Developer**: Integrate vào development workflow để boost productivity
-
-### Trải nghiệm trong event
-
-Tham gia workshop **“GenAI-powered App-DB Modernization”** là một trải nghiệm rất bổ ích, giúp tôi có cái nhìn toàn diện về cách hiện đại hóa ứng dụng và cơ sở dữ liệu bằng các phương pháp và công cụ hiện đại. Một số trải nghiệm nổi bật:
-
-#### Học hỏi từ các diễn giả có chuyên môn cao
-- Các diễn giả đến từ AWS và các tổ chức công nghệ lớn đã chia sẻ **best practices** trong thiết kế ứng dụng hiện đại.
-- Qua các case study thực tế, tôi hiểu rõ hơn cách áp dụng **Domain-Driven Design (DDD)** và **Event-Driven Architecture** vào các project lớn.
-
-#### Trải nghiệm kỹ thuật thực tế
-- Tham gia các phiên trình bày về **event storming** giúp tôi hình dung cách **mô hình hóa quy trình kinh doanh** thành các domain events.
-- Học cách **phân tách microservices** và xác định **bounded contexts** để quản lý sự phức tạp của hệ thống lớn.
-- Hiểu rõ trade-offs giữa **synchronous và asynchronous communication** cũng như các pattern tích hợp như **pub/sub, point-to-point, streaming**.
-
-#### Ứng dụng công cụ hiện đại
-- Trực tiếp tìm hiểu về **Amazon Q Developer**, công cụ AI hỗ trợ SDLC từ lập kế hoạch đến maintenance.
-- Học cách **tự động hóa code transformation** và pilot serverless với **AWS Lambda**, từ đó nâng cao năng suất phát triển.
-
-#### Kết nối và trao đổi
-- Workshop tạo cơ hội trao đổi trực tiếp với các chuyên gia, đồng nghiệp và team business, giúp **nâng cao ngôn ngữ chung (ubiquitous language)** giữa business và tech.
-- Qua các ví dụ thực tế, tôi nhận ra tầm quan trọng của **business-first approach**, luôn bắt đầu từ nhu cầu kinh doanh thay vì chỉ tập trung vào công nghệ.
+#### Giao lưu và thảo luận
+- Gặp gỡ, trao đổi cùng các bạn thực tập sinh First Cloud AI Journey và các kỹ sư tại văn phòng Bitexco Financial Tower về cách tổ chức luồng xử lý backend và lưu trữ trạng thái cho ứng dụng AI[cite: 2].
 
 #### Bài học rút ra
-- Việc áp dụng DDD và event-driven patterns giúp giảm **coupling**, tăng **scalability** và **resilience** cho hệ thống.
-- Chiến lược hiện đại hóa cần **phased approach** và đo lường **ROI**, không nên vội vàng chuyển đổi toàn bộ hệ thống.
-- Các công cụ AI như Amazon Q Developer có thể **boost productivity** nếu được tích hợp vào workflow phát triển hiện tại.
+- Xác định rõ mục tiêu và phạm vi ngay từ đầu giúp tránh thiết kế dư thừa trong các dự án thực tập và hackathon.
+- Độ tin cậy của một ứng dụng AI phụ thuộc rất lớn vào các thành phần kỹ thuật bao quanh như cổng kiểm soát, bộ nhớ ngữ cảnh, đầu ra JSON có cấu trúc và cơ chế lập lịch tác vụ.
 
-#### Một số hình ảnh khi tham gia sự kiện
-* Thêm các hình ảnh của các bạn tại đây
-> Tổng thể, sự kiện không chỉ cung cấp kiến thức kỹ thuật mà còn giúp tôi thay đổi cách tư duy về thiết kế ứng dụng, hiện đại hóa hệ thống và phối hợp hiệu quả hơn giữa các team.
+#### Một số hình ảnh tại sự kiện
+- ![Presentation at the Buildrathon Kickoff](/images/4-Events/event1-presentation.jpg)
+  *Phần trình bày mở đầu tại sự kiện Buildrathon Kickoff.*
+- ![Slide on AWS investment in Vietnam](/images/4-Events/event1-aws-investment.jpg)
+  *Slide giới thiệu về đầu tư của AWS tại Việt Nam.*
+- ![Technical presentation on the Market Slack Bot architecture](/images/4-Events/event1-tech-session.jpg)
+  *Phần trình bày kỹ thuật về kiến trúc Market Slack Bot.*
+- ![Market Slack Bot diagram shown at the event](/images/4-Events/event1-architecture-diagram.jpg)
+  *Sơ đồ kiến trúc Market Slack Bot được giới thiệu tại sự kiện.*
+- ![Group photo at the Buildrathon event](/images/4-Events/event1-group-1.jpg)
+  *Ảnh chụp tập thể tại sự kiện Buildrathon.*
+- ![Group photo of Buildrathon Kickoff attendees](/images/4-Events/event1-group-2.jpg)
+  *Ảnh chụp lưu niệm cùng các thành viên tham dự Buildrathon Kickoff.*
+
+> Nhìn chung, sự kiện khởi động không chỉ giúp tôi nắm rõ định hướng của chương trình Buildrathon mà còn cung cấp một khuôn mẫu kiến trúc thực tế để áp dụng trực tiếp vào việc xây dựng hệ thống backend AI Serverless của nhóm.
