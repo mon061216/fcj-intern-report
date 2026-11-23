@@ -103,13 +103,11 @@ Tham dự chương trình **“AWS Cloud and AI Day Hanoi 2026 - HCMC Watch Part
 - Hệ thống AI đáng tin cậy đòi hỏi quản trị quyền truy cập chặt chẽ, bảo vệ dữ liệu riêng tư và trách nhiệm giám sát rõ ràng của con người[cite: 2].
 
 #### Một số hình ảnh tại sự kiện
-- ![Không gian Watch Party tại Bitexco](/images/4-Events/event2-venue.jpg)
-  *Không gian sự kiện AWS Cloud and AI Day Watch Party tại tầng 26, tòa nhà Bitexco Financial Tower.*
-- ![Thẻ tham dự và khu vực giao lưu](/images/4-Events/event2-badge.jpg)
-  *Thẻ tham dự sự kiện và khu vực giao lưu kết nối.*
-- ![Phiên phát biểu chính của Eric Yeo và TS. Werner Vogels](/images/4-Events/event2-keynote.jpg)
-  *Theo dõi phiên phát biểu chính được truyền hình trực tiếp từ Hà Nội.*
-- ![Phiên chia sẻ về bảo mật chủ động và kiểm chứng phần mềm](/images/4-Events/event2-appsec.jpg)
-  *Nội dung chia sẻ về bảo mật chủ động và hàng rào kiểm soát doanh nghiệp.*
+- ![Phần thuyết trình của diễn giả](/images/4-EventParticipated/event29_9_1.jpg)
+  *Phần thuyết trình của diễn giả tại sự kiện.*
+- ![Bản thân tham gia sự kiện](/images/4-EventParticipated/event29_9_2.jpg)
+  *Hình ảnh bản thân tham gia sự kiện.*
+- ![Khu vực tea break và giao lưu](/images/4-EventParticipated/event29_9_3.jpg)
+  *Khu vực tea break và giao lưu kết nối tại sự kiện.*
 
 > Nhìn chung, sự kiện đã kết nối chiến lược ứng dụng Cloud/AI với các nguyên lý kỹ thuật hệ thống cốt lõi, định hướng trực tiếp cho cách tôi thiết kế bảo mật, kiểm thử và giám sát trong phần việc Backend của mình.

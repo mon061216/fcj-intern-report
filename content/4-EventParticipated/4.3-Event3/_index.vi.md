@@ -150,7 +150,9 @@ Tham gia buổi meetup **"First Cloud AI Journey"** tại Bitexco Financial Towe
 - Học hỏi liên tục, kết nối và chủ động tham gia cộng đồng công nghệ là những yếu tố quan trọng đối với sự phát triển nghề nghiệp.
 
 #### Một số hình ảnh tại sự kiện
-
-*Thêm hình ảnh của bạn tại đây*
+- ![Bản thân tham gia sự kiện](/images/4-EventParticipated/event24_10_1.jpg)
+  *Hình ảnh bản thân tham gia sự kiện.*
+- ![Ảnh chụp tổng kết sự kiện](/images/4-EventParticipated/event24_10_2.jpg)
+  *Ảnh chụp tập thể tổng kết sự kiện.*
 
 > Nhìn chung, buổi meetup đã mở rộng hiểu biết của mình về cách Cloud Computing và AI đang được ứng dụng trong môi trường doanh nghiệp thực tế. Quan trọng hơn, mình nhận ra rằng việc học công nghệ không chỉ dừng lại ở việc hiểu từng dịch vụ hay công cụ riêng lẻ, mà còn cần hiểu cách các thành phần phối hợp với nhau để xây dựng những hệ thống an toàn, hiệu quả và đáng tin cậy. Trải nghiệm này cũng tạo thêm động lực để mình tự tin hơn trong giao tiếp, chủ động tham gia các cuộc thảo luận kỹ thuật và tiếp tục phát triển kiến thức trên hành trình Cloud và AI của bản thân.

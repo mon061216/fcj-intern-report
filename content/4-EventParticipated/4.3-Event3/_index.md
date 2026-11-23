@@ -150,7 +150,9 @@ Attending the **"First Cloud AI Journey"** meetup at Bitexco Financial Tower on 
 - Continuous learning, networking, and active participation in technical communities are essential for professional growth.
 
 #### Some event photos
-
-*Add your event photos here*
+- ![Attending the event](/images/4-EventParticipated/event24_10_1.jpg)
+  *Personal photo attending the event.*
+- ![Wrap-up group photo](/images/4-EventParticipated/event24_10_2.jpg)
+  *Group photo at the event wrap-up.*
 
 > Overall, the meetup broadened my understanding of how Cloud Computing and AI are being applied in real-world business environments. More importantly, it helped me realize that learning technology is not just about understanding individual services or tools, but also about understanding how different components work together to build secure, efficient, and reliable systems. The experience motivated me to become more confident in networking, actively participate in technical discussions, and continue developing my knowledge throughout my Cloud and AI journey.

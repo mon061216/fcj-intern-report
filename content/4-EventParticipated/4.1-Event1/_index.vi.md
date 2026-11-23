@@ -82,17 +82,11 @@ Tham dự buổi **“Buildrathon Kickoff: Code the Future with CMC Global”** 
 - Độ tin cậy của một ứng dụng AI phụ thuộc rất lớn vào các thành phần kỹ thuật bao quanh như cổng kiểm soát, bộ nhớ ngữ cảnh, đầu ra JSON có cấu trúc và cơ chế lập lịch tác vụ.
 
 #### Một số hình ảnh tại sự kiện
-- ![Presentation at the Buildrathon Kickoff](/images/4-Events/event1-presentation.jpg)
-  *Phần trình bày mở đầu tại sự kiện Buildrathon Kickoff.*
-- ![Slide on AWS investment in Vietnam](/images/4-Events/event1-aws-investment.jpg)
-  *Slide giới thiệu về đầu tư của AWS tại Việt Nam.*
-- ![Technical presentation on the Market Slack Bot architecture](/images/4-Events/event1-tech-session.jpg)
-  *Phần trình bày kỹ thuật về kiến trúc Market Slack Bot.*
-- ![Market Slack Bot diagram shown at the event](/images/4-Events/event1-architecture-diagram.jpg)
-  *Sơ đồ kiến trúc Market Slack Bot được giới thiệu tại sự kiện.*
-- ![Group photo at the Buildrathon event](/images/4-Events/event1-group-1.jpg)
-  *Ảnh chụp tập thể tại sự kiện Buildrathon.*
-- ![Group photo of Buildrathon Kickoff attendees](/images/4-Events/event1-group-2.jpg)
-  *Ảnh chụp lưu niệm cùng các thành viên tham dự Buildrathon Kickoff.*
+- ![Phần thuyết trình của diễn giả](/images/4-EventParticipated/event26_9_1.jpg)
+  *Phần thuyết trình của diễn giả tại sự kiện.*
+- ![Bản thân tham gia sự kiện](/images/4-EventParticipated/event26_9_2.jpg)
+  *Hình ảnh bản thân tham gia sự kiện.*
+- ![Ảnh chụp tổng kết sự kiện](/images/4-EventParticipated/event26_9_3.jpg)
+  *Ảnh chụp tập thể tổng kết sự kiện.*
 
 > Nhìn chung, sự kiện khởi động không chỉ giúp tôi nắm rõ định hướng của chương trình Buildrathon mà còn cung cấp một khuôn mẫu kiến trúc thực tế để áp dụng trực tiếp vào việc xây dựng hệ thống backend AI Serverless của nhóm.

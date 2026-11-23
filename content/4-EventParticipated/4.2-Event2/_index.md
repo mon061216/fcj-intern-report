@@ -103,13 +103,11 @@ Attending the **“AWS Cloud and AI Day Hanoi 2026 - HCMC Watch Party”** on Se
 - Reliable AI systems require strong access governance, privacy protection, and explicit human accountability[cite: 2].
 
 #### Some event photos
-- ![AWS Cloud and AI Day watch party venue](/images/4-Events/event2-venue.jpg)
-  *The AWS Cloud and AI Day watch party venue on the 26th floor of Bitexco Financial Tower.*
-- ![Attendee badge and networking area](/images/4-Events/event2-badge.jpg)
-  *AWS Cloud and AI Day attendee badge and networking space.*
-- ![Keynote presentation by Eric Yeo and Dr. Werner Vogels](/images/4-Events/event2-keynote.jpg)
-  *Keynote presentation streamed at the HCMC watch party.*
-- ![Proactive AppSec and validation debt session](/images/4-Events/event2-appsec.jpg)
-  *Technical session on proactive security and enterprise guardrails.*
+- ![Speaker's presentation](/images/4-EventParticipated/event29_9_1.jpg)
+  *Speaker's presentation at the event.*
+- ![Attending the event](/images/4-EventParticipated/event29_9_2.jpg)
+  *Personal photo attending the event.*
+- ![Tea break and networking area](/images/4-EventParticipated/event29_9_3.jpg)
+  *Tea break and networking area at the watch party.*
 
 > Overall, the event bridged high-level cloud/AI strategy with deep systems engineering principles, directly shaping how I approach security, testing, and observability in my backend work.

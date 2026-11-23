@@ -82,17 +82,11 @@ Attending the **“Buildrathon Kickoff: Code the Future with CMC Global”** on 
 - Building reliable AI applications depends heavily on surrounding engineering components—gates, memory stores, structured JSON outputs, and scheduled jobs—rather than the LLM alone.
 
 #### Some event photos
-- ![Presentation at the Buildrathon Kickoff](/images/4-Events/event1-presentation.jpg)
-  *Presentation at the Buildrathon Kickoff.*
-- ![Slide on AWS investment in Vietnam](/images/4-Events/event1-aws-investment.jpg)
-  *Slide on AWS investment in Vietnam.*
-- ![Technical presentation on the Market Slack Bot architecture](/images/4-Events/event1-tech-session.jpg)
-  *Technical presentation on the Market Slack Bot architecture.*
-- ![Market Slack Bot diagram shown at the event](/images/4-Events/event1-architecture-diagram.jpg)
-  *Market Slack Bot diagram shown at the event.*
-- ![Group photo at the Buildrathon event](/images/4-Events/event1-group-1.jpg)
-  *Group photo at the Buildrathon event.*
-- ![Group photo of Buildrathon Kickoff attendees](/images/4-Events/event1-group-2.jpg)
-  *Group photo of Buildrathon Kickoff attendees.*
+- ![Speaker's presentation](/images/4-EventParticipated/event26_9_1.jpg)
+  *Speaker's presentation during the kickoff session.*
+- ![Attending the event](/images/4-EventParticipated/event26_9_2.jpg)
+  *Personal photo attending the event.*
+- ![Wrap-up group photo](/images/4-EventParticipated/event26_9_3.jpg)
+  *Wrap-up group photo at the event.*
 
 > Overall, the kickoff event not only clarified the direction of Buildrathon but also provided a practical architectural blueprint that I directly applied to structuring our serverless AI bot backend.
