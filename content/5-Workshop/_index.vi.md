@@ -1,33 +1,35 @@
 ---
 title: "Workshop"
-date: 2024-01-01
+date: 2026-11-25
 weight: 5
 chapter: false
 pre: " <b> 5. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
-
-# Đảm bảo truy cập Hybrid an toàn đến S3 bằng cách sử dụng VPC endpoint
+# Ask First ("Hỏi Trước"): bot kiểm tra tin lừa đảo chạy serverless trên AWS
 
 #### Tổng quan
 
-**AWS PrivateLink** cung cấp kết nối riêng tư đến các dịch vụ aws từ VPCs hoặc trung tâm dữ liệu (on-premise) mà không làm lộ lưu lượng truy cập ra ngoài public internet.
+**Ask First** là một Telegram bot giúp người cao tuổi kiểm tra tin nhắn đáng ngờ trước khi làm theo. Người dùng chuyển tiếp tin nhắn, đường link hoặc ảnh chụp màn hình cho bot. Sau vài giây, bot trả lời bằng tiếng Việt dễ hiểu: tin này rủi ro tới mức nào, giống kịch bản lừa đảo nào và nên làm gì tiếp theo. Nếu rủi ro cao, bot có thể báo cho người thân đã đồng ý nhận cảnh báo.
 
-Trong bài lab này, chúng ta sẽ học cách tạo, cấu hình, và kiểm tra VPC endpoints để cho phép workload của bạn tiếp cận các dịch vụ AWS mà không cần đi qua Internet công cộng.
+Toàn bộ hệ thống chạy serverless trên AWS:
 
-Chúng ta sẽ tạo hai loại endpoints để truy cập đến Amazon S3: gateway vpc endpoint và interface vpc endpoint. Hai loại vpc endpoints này mang đến nhiều lợi ích tùy thuộc vào việc bạn truy cập đến S3 từ môi trường cloud hay từ trung tâm dữ liệu (on-premise).
-+ **Gateway** - Tạo gateway endpoint để gửi lưu lượng đến Amazon S3 hoặc DynamoDB using private IP addresses. Bạn điều hướng lưu lượng từ VPC của bạn đến gateway endpoint bằng các bảng định tuyến (route tables)
-+ **Interface** - Tạo interface endpoint để gửi lưu lượng đến các dịch vụ điểm cuối (endpoints) sử dụng Network Load Balancer để phân phối lưu lượng. Lưu lượng dành cho dịch vụ điểm cuối được resolved bằng DNS.
++ **AWS Lambda** (Java 21) nhận update từ Telegram qua **Function URL** (`webhook`) và xử lý job từ **Amazon SQS** (`worker`), có **dead-letter queue** cho job lỗi.
++ Lambda thứ ba là **`ai`**, đóng gói dạng **container image** (Python 3.12): chạy model OCR và embedding trên CPU, áp dụng luật và RAG, rồi gọi **Amazon Bedrock** (Qwen3 32B, dự phòng gpt-oss-120b) có **Bedrock Guardrails** đứng trước.
++ **Amazon DynamoDB** lưu metadata có TTL, **Amazon S3** lưu trọng số model và index của knowledge base, **SSM Parameter Store** giữ bot token và webhook secret, **Amazon CloudWatch** thu log và alarm cho DLQ.
++ Mọi tài nguyên được viết dưới dạng code bằng **AWS SAM** và deploy ở `ap-southeast-1` (Singapore); Bedrock được gọi ở `ap-southeast-2` (Sydney).
+
+Trong workshop này, bạn sẽ dựng lại đúng hệ thống đó trên tài khoản AWS của mình theo từng bước, và kết thúc với một bot chạy thật để nhắn tin trên Telegram.
 
 #### Nội dung
 
-1. [Tổng quan về workshop](5.1-Workshop-overview/)
-2. [Chuẩn bị](5.2-Prerequiste/)
-3. [Truy cập đến S3 từ VPC](5.3-S3-vpc/)
-4. [Truy cập đến S3 từ TTDL On-premises](5.4-S3-onprem/)
-5. [VPC Endpoint Policies (làm thêm)](5.5-Policy/)
-6. [Dọn dẹp tài nguyên](5.6-Cleanup/)
+1. [Tổng quan](5.1-overview/)
+2. [Chuẩn bị](5.2-prerequisites/)
+3. [Deploy hạ tầng (SAM)](5.3-deploy-infrastructure/)
+4. [Deploy AI function](5.4-deploy-ai-function/)
+5. [Kết nối Telegram](5.5-connect-telegram/)
+6. [Kiểm thử và nghiệm thu](5.6-testing-validation/)
+7. [Giám sát](5.7-monitoring/)
+8. [Chi phí](5.8-cost/)
+9. [Dọn dẹp tài nguyên](5.9-cleanup/)
+10. [Demo và bài học kinh nghiệm](5.10-demo-lessons/)
