@@ -1,31 +1,25 @@
 ---
 title: "Blog 1"
-date: 2024-01-01
+date: 2026-11-26
 weight: 1
 chapter: false
 pre: " <b> 3.1. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
-# SESSION POLICIES IN AMAZON EKS POD IDENTITY
+# LOCAL-FIRST SERVERLESS & EVENT-DRIVEN TESTING WITH LOCALSTACK AND JAVA 21
 
-Amazon EKS Pod Identity has recently added the session policies feature, allowing you to narrow IAM permissions flexibly and precisely for each pod without needing to create many separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
+When developing event-driven serverless applications on AWS—such as ingesting webhook events into **Amazon SQS**, processing messages asynchronously via **AWS Lambda (Java 21)**, storing state in **Amazon DynamoDB**, reading configuration from **AWS Systems Manager (SSM) Parameter Store**, and routing failed payloads to an **SQS Dead-Letter Queue (DLQ)**—deploying directly to the cloud for every minor code or configuration change slows down iteration and risks unintended costs.
 
-Key points to know:
+This blog shares a **Local-First testing workflow** using **LocalStack** and **Java 21 (AWS SDK v2)** to validate both normal execution paths and failure/DLQ behaviors locally before deploying to AWS with **AWS SAM**.
 
-* A session policy is an inline IAM policy specified when creating or updating a Pod Identity association.
-* Effective permissions = intersection between the IAM role permissions and the session policy → the session policy can only narrow permissions, not expand them.
-* Helps avoid over-permissioning when reusing a single IAM role for multiple workloads with different needs.
-* Supports both same-account and cross-account (via IAM role chaining).
-* Significantly reduces the number of IAM roles that need to be managed, helping avoid hitting IAM quota limits in large clusters.
-* Easily configured through the AWS Management Console, AWS CLI, or AWS SDK when creating an association between a Kubernetes ServiceAccount and an IAM role.
+Key points covered in the post:
 
-This feature is especially useful when you have many applications running on the same IAM role but need different permission restrictions (for example: one pod only reads a specific S3 bucket, another pod only calls certain APIs).
+- **Environment-based Endpoint Separation in AWS SDK v2:** Overriding service endpoints (`endpointOverride`) to target LocalStack (`http://localhost:4566`) only when running in local mode (`isLocal = true`), while keeping default AWS endpoints in production.
+- **Full Event-Driven Emulation in Docker:** Spinning up SQS, DLQ, DynamoDB, SSM Parameter Store, S3, IAM, and Lambda locally using a lightweight `docker-compose.yml` setup in `ap-southeast-1`.
+- **End-to-End Happy Path & DLQ Verification:** Testing valid payloads to verify DynamoDB state persistence and message deletion from the main queue, alongside intentionally malformed payloads to confirm retry exhaustion and automatic routing to the **SQS DLQ**.
+- **Safer & Faster AWS SAM Deployment:** Catching missing parameters, null-handling issues, and queue misconfigurations at `$0` local cost before packaging and deploying the stack to AWS Cloud.
 
-...Image...
+![Local-First Serverless Testing Architecture](images/blog1-localstack-architecture.png)
 
-...Link...
-
-...Guide...
+- **Facebook Post Link:** [Link bài viết Blog 1 trên AWS Study Group](https://www.facebook.com/groups/awsstudygroupfcj)
+- **Reference Setup & Code Snippets:** Included `docker-compose.yml` for LocalStack (`:4566`) and Java 21 `SqsClient` endpoint configuration in the post.

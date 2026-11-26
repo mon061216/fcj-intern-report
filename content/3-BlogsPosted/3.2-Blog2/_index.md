@@ -9,20 +9,19 @@ pre: " <b> 3.2. </b> "
 ⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
 {{% /notice %}}
 
-# SESSION POLICIES IN AMAZON EKS POD IDENTITY
+# LAMBDA + EVENTBRIDGE: DAILY DATA AUTOMATION WITH EVENT-DRIVEN ARCHITECTURE
 
-Amazon EKS Pod Identity has recently added the session policies feature, allowing you to narrow IAM permissions flexibly and precisely for each pod without needing to create many separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
+This blog post documents an event-driven architecture on AWS that replaces manual daily checks for fuel prices, gold prices, esports match scores, and weather with a single auto-updating static web page served via Amazon S3 and Amazon CloudFront. Instead of running an always-on server or a monolithic script where one failing API breaks the entire page, Amazon EventBridge Scheduler, AWS Lambda, and EventBridge Rules decouple data collection from page rendering.
 
 Key points to know:
 
-* A session policy is an inline IAM policy specified when creating or updating a Pod Identity association.
-* Effective permissions = intersection between the IAM role permissions and the session policy → the session policy can only narrow permissions, not expand them.
-* Helps avoid over-permissioning when reusing a single IAM role for multiple workloads with different needs.
-* Supports both same-account and cross-account (via IAM role chaining).
-* Significantly reduces the number of IAM roles that need to be managed, helping avoid hitting IAM quota limits in large clusters.
-* Easily configured through the AWS Management Console, AWS CLI, or AWS SDK when creating an association between a Kubernetes ServiceAccount and an IAM role.
+- **Independent schedules per source:** Amazon EventBridge Scheduler triggers a shared Lambda collector asynchronously with source-specific payloads (`weather`, `gold`, `fuel`, `esport`) and local time-zone support, matching each source's update cadence (such as every 30 minutes for esports scores, every 3 hours for weather, and daily/weekly for fuel and gold) with retry policies and a dead-letter queue.
+- **Normalized storage and fault isolation:** A single Python Lambda collector fetches external APIs, normalizes payloads into `data/<source>.json` in Amazon S3, and avoids overwriting prior data when a source fails so existing values stay visible.
+- **Prefix-filtered event chaining:** S3 Object Created events sent to EventBridge use a rule matching prefix `data/` to invoke a Lambda renderer—preventing an infinite loop when the renderer writes `index.html` to the same bucket.
+- **Idempotent rendering and cache invalidation:** The renderer reads available source JSON files (showing `"chưa có"` when missing) plus each source's `updatedAt` timestamp, rebuilds `index.html` idempotently for at-least-once delivery, and triggers a CloudFront invalidation on `/index.html`.
+- **Extensible serverless footprint:** Adding a new data source requires adding a normalizer and schedule without rewriting the rendering pipeline or maintaining a 24/7 server.
 
-This feature is especially useful when you have many applications running on the same IAM role but need different permission restrictions (for example: one pod only reads a specific S3 bucket, another pod only calls certain APIs).
+This pattern fits personal dashboards and lightweight aggregation pipelines where each data feed updates on its own schedule, degrades gracefully when an upstream API fails, and scales to new sources with minimal operational overhead.
 
 ...Image...
 

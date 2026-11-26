@@ -9,20 +9,19 @@ pre: " <b> 3.2. </b> "
 ⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
 {{% /notice %}}
 
-# SESSION POLICIES TRONG AMAZON EKS POD IDENTITY
+# LAMBDA + EVENTBRIDGE: TỰ ĐỘNG CẬP NHẬT DỮ LIỆU HẰNG NGÀY VỚI EVENT-DRIVEN ARCHITECTURE
 
-Amazon EKS Pod Identity vừa bổ sung tính năng session policies, cho phép bạn thu hẹp quyền IAM một cách linh hoạt và chính xác cho từng pod mà không cần tạo thêm nhiều IAM roles riêng biệt. Đây là bước tiến quan trọng giúp áp dụng nguyên tắc least privilege hiệu quả hơn trong môi trường Kubernetes quy mô lớn.
+Bài báo cáo tóm tắt cách xây dựng kiến trúc event-driven trên AWS để thay thế việc mở nhiều tab kiểm tra giá xăng, giá vàng, tỉ số esport và thời tiết mỗi sáng bằng một trang tĩnh tự cập nhật qua Amazon S3 và Amazon CloudFront. Thay vì duy trì server chạy 24/7 hoặc một script tuần tự dễ gãy khi một API lỗi, hệ thống kết nối Amazon EventBridge Scheduler, AWS Lambda và EventBridge Rules theo từng sự kiện độc lập.
 
 Các điểm chính cần nắm:
 
-* Session policy là một IAM policy inline được chỉ định khi tạo hoặc cập nhật Pod Identity association.
-* Quyền hiệu quả = intersection (giao) giữa permissions của IAM role và session policy → session policy chỉ có thể thu hẹp, không thể mở rộng quyền.
-* Giúp tránh tình trạng over-permissioning khi reuse chung một IAM role cho nhiều workloads có nhu cầu khác nhau.
-* Hỗ trợ cả same-account và cross-account (qua IAM role chaining).
-* Giảm đáng kể số lượng IAM roles cần quản lý, tránh chạm giới hạn quota IAM trong cluster lớn.
-* Cấu hình dễ dàng qua AWS Management Console, AWS CLI hoặc AWS SDK khi tạo association giữa Kubernetes ServiceAccount và IAM role.
+- **Lịch chạy riêng cho từng nguồn:** EventBridge Scheduler gọi Lambda collector bất đồng bộ kèm payload theo từng nguồn (`weather`, `gold`, `fuel`, `esport`) và hỗ trợ múi giờ địa phương, khớp nhịp cập nhật riêng (ví dụ 30 phút cho esport, 3 giờ cho thời tiết, hằng ngày/tuần cho giá xăng và vàng) cùng retry policy và dead-letter queue.
+- **Chuẩn hóa dữ liệu và cô lập lỗi:** Một hàm Lambda collector viết bằng Python lấy dữ liệu, chuẩn hóa thành `data/<nguồn>.json` trên S3, và không ghi đè file cũ khi nguồn gặp lỗi để trang vẫn giữ số liệu trước đó.
+- **Lọc prefix để tránh lặp vô tận:** Sự kiện Object Created từ S3 gửi sang EventBridge được lọc theo prefix `data/` trước khi gọi Lambda renderer, nhờ đó việc ghi `index.html` vào cùng bucket không kích hoạt lại chính renderer.
+- **Thiết kế idempotent và làm mới cache:** Lambda renderer đọc các file JSON hiện có (hiển thị `"chưa có"` nếu thiếu) kèm `updatedAt` của từng nguồn, dựng lại `index.html` theo hướng idempotent để chịu được cơ chế giao sự kiện at-least-once, sau đó tạo CloudFront invalidation cho `/index.html`.
+- **Dễ mở rộng và tiết kiệm chi phí:** Khi cần thêm nguồn dữ liệu mới, chỉ cần bổ sung hàm chuẩn hóa và lịch tương ứng mà không phải sửa toàn bộ luồng dựng trang hay vận hành máy chủ liên tục.
 
-Tính năng này đặc biệt hữu ích khi bạn có nhiều ứng dụng chạy trên cùng một IAM role nhưng cần giới hạn quyền khác nhau (ví dụ: một pod chỉ đọc S3 bucket cụ thể, pod khác chỉ gọi một số API nhất định).
+Mô hình này phù hợp cho các trang tổng hợp thông tin cá nhân cần cập nhật theo nhiều nhịp khác nhau, giữ tính ổn định khi một nguồn gián đoạn và dễ mở rộng thêm nguồn mới với chi phí thấp.
 
 ...Hình ảnh...
 
