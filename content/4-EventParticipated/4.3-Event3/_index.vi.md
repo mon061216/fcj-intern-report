@@ -6,12 +6,6 @@ chapter: false
 pre: " <b> 4.3. </b> "
 ---
 
-{{% notice warning %}}
-
-⚠️ **Lưu ý:** Nội dung bên dưới chỉ mang tính chất tham khảo. Vui lòng **không sao chép nguyên văn** nội dung này vào báo cáo, bao gồm cả thông báo này.
-
-{{% /notice %}}
-
 # Báo cáo tổng kết: "First Cloud AI Journey"
 
 ### Mục tiêu sự kiện
