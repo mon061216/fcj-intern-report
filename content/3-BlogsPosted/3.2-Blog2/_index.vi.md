@@ -1,13 +1,10 @@
 ---
 title: "Blog 2"
-date: 2024-01-01
-weight: 1
+date: 2026-11-26
+weight: 2
 chapter: false
 pre: " <b> 3.2. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
 # LAMBDA + EVENTBRIDGE: TỰ ĐỘNG CẬP NHẬT DỮ LIỆU HẰNG NGÀY VỚI EVENT-DRIVEN ARCHITECTURE
 
@@ -23,8 +20,5 @@ Các điểm chính cần nắm:
 
 Mô hình này phù hợp cho các trang tổng hợp thông tin cá nhân cần cập nhật theo nhiều nhịp khác nhau, giữ tính ổn định khi một nguồn gián đoạn và dễ mở rộng thêm nguồn mới với chi phí thấp.
 
-...Hình ảnh...
-
-...Link...
-
-...Hướng dẫn...
+- **Link bài viết trên Facebook:** [Link bài viết Blog 2 trên AWS Study Group](https://www.facebook.com/groups/awsstudygroupfcj)
+- **Mô hình kiến trúc & Triển khai:** Sử dụng Amazon EventBridge Scheduler kích hoạt AWS Lambda bất đồng bộ, lưu trữ tệp chuẩn hóa JSON trên Amazon S3 và phân phối tĩnh an toàn qua Amazon CloudFront.

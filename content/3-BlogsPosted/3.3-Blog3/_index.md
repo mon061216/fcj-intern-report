@@ -1,13 +1,10 @@
 ---
 title: "Blog 3"
-date: 2024-01-01
-weight: 1
+date: 2026-11-26
+weight: 3
 chapter: false
 pre: " <b> 3.3. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
 # SESSION POLICIES IN AMAZON EKS POD IDENTITY
 
@@ -15,8 +12,8 @@ Amazon EKS Pod Identity has recently added the session policies feature, allowin
 
 Key points to know:
 
-* A session policy is an inline IAM policy specified when creating or updating a Pod Identity association.
-* Effective permissions = intersection between the IAM role permissions and the session policy → the session policy can only narrow permissions, not expand them.
+* **Session policy is an inline IAM policy** specified when creating or updating a Pod Identity association.
+* **Effective permissions = intersection** between the IAM role permissions and the session policy → the session policy can only narrow permissions, not expand them.
 * Helps avoid over-permissioning when reusing a single IAM role for multiple workloads with different needs.
 * Supports both same-account and cross-account (via IAM role chaining).
 * Significantly reduces the number of IAM roles that need to be managed, helping avoid hitting IAM quota limits in large clusters.
@@ -24,8 +21,5 @@ Key points to know:
 
 This feature is especially useful when you have many applications running on the same IAM role but need different permission restrictions (for example: one pod only reads a specific S3 bucket, another pod only calls certain APIs).
 
-...Image...
-
-...Link...
-
-...Guide...
+- **Link to Facebook Post:** [Blog 3 Post on AWS Study Group](https://www.facebook.com/groups/awsstudygroupfcj)
+- **Practical Application:** Enforces the Principle of Least Privilege via session policies to restrict IAM permissions directly per Pod without role sprawl in Amazon EKS clusters.

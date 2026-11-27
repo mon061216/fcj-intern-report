@@ -1,57 +1,25 @@
 ---
 title: "Week 5 Worklog"
-date: 2024-01-01
+date: 2026-10-19
 weight: 5
 chapter: false
 pre: " <b> 1.5. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 5 Objectives:
+- Set up a personal AWS account strictly following security principles and cost governance best practices.
+- Practice hands-on operations directly via AWS Management Console: create an S3 bucket, provision an EC2 Linux instance, install an Nginx web server, and tear down resources cleanly.
 
-- Connect and get acquainted with members of First Cloud AI Journey.
-- Understand basic AWS services, how to use the console & CLI.
+### Tasks to Implement This Week:
+| Day | Task | Start Date | Completion Date | Reference Materials |
+| --- | --- | --- | --- | --- |
+| Mon | - Created an AWS account and enabled Multi-Factor Authentication (**MFA**) using a virtual MFA app on the **Root User** <br> - Created an administrative **IAM User** (attached `AdministratorAccess` policy) for daily operational tasks, strictly avoiding the use of Root User for routine work | 19/10/2026 | 19/10/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| Tue | - Accessed AWS Billing & Cost Management to configure **AWS Budgets** (created a Zero-Spend Budget and email notification thresholds when forecasted spend exceeds $0) <br> - Selected the optimal **AWS Region** for low latency in Vietnam (`ap-southeast-1` - Singapore) | 20/10/2026 | 20/10/2026 | AWS Billing Console |
+| Wed | - **Amazon S3 Hands-on:** <br>&emsp; + Created a globally unique S3 bucket with Block All Public Access enabled <br>&emsp; + Uploaded files (images, documents), verified Object URL behavior, downloaded files, and tested creating Presigned URLs for secure temporary file sharing | 21/10/2026 | 21/10/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| Thu | - **Amazon EC2 Hands-on:** <br>&emsp; + Launched an EC2 instance with Ubuntu/Amazon Linux AMI (`t2.micro`/`t3.micro`) and generated a new Key Pair (`.pem`) <br>&emsp; + Configured a Security Group with an inbound SSH rule (Port 22) restricted to personal IP (`My IP`) <br>&emsp; + Successfully established an SSH connection from the local terminal to the EC2 instance | 22/10/2026 | 22/10/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| Fri | - **Web Server Deployment & Resource Cleanup:** <br>&emsp; + Updated system packages (`sudo apt update`) and installed **Nginx** on EC2 <br>&emsp; + Modified Security Group inbound rules to allow HTTP (Port 80) from anywhere (`0.0.0.0/0`), successfully viewing the Nginx welcome page via public IP on a browser <br>&emsp; + **Terminated the EC2 instance** and deleted the test S3 bucket to ensure zero unexpected charges | 23/10/2026 | 23/10/2026 | Personal Practice |
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
-
-### Week 5 Achievements:
-
-- Understood what AWS is and mastered the basic service groups: 
-  - Compute
-  - Storage
-  - Networking 
-  - Database
-  - ...
-
-- Successfully created and configured an AWS Free Tier account.
-
-- Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-- Installed and configured AWS CLI on the computer, including:
-  - Access Key
-  - Secret Key
-  - Default Region
-  - ...
-
-- Used AWS CLI to perform basic operations such as:
-
-- Check account & configuration information
-- Retrieve the list of regions
-- View EC2 service
-- Create and manage key pairs
-- Check information about running services
-- ...
-
-- Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-- ...
+### Week 5 Key Outcomes:
+- Successfully configured a secure AWS sandbox environment with automated budget alerts.
+- Gained initial hands-on experience provisioning a cloud server, connecting remotely via SSH, and serving a public website over Nginx.
+- Formed the disciplined habit of auditing active dashboards (EC2, EBS, S3) and properly terminating unused resources after labs.

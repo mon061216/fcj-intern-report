@@ -1,13 +1,10 @@
 ---
 title: "Blog 3"
-date: 2024-01-01
-weight: 1
+date: 2026-11-26
+weight: 3
 chapter: false
 pre: " <b> 3.3. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
 # SESSION POLICIES TRONG AMAZON EKS POD IDENTITY
 
@@ -15,8 +12,8 @@ Amazon EKS Pod Identity vừa bổ sung tính năng session policies, cho phép 
 
 Các điểm chính cần nắm:
 
-* Session policy là một IAM policy inline được chỉ định khi tạo hoặc cập nhật Pod Identity association.
-* Quyền hiệu quả = intersection (giao) giữa permissions của IAM role và session policy → session policy chỉ có thể thu hẹp, không thể mở rộng quyền.
+* **Session policy là một IAM policy inline** được chỉ định khi tạo hoặc cập nhật Pod Identity association.
+* **Quyền hiệu quả = intersection (giao)** giữa permissions của IAM role và session policy → session policy chỉ có thể thu hẹp, không thể mở rộng quyền.
 * Giúp tránh tình trạng over-permissioning khi reuse chung một IAM role cho nhiều workloads có nhu cầu khác nhau.
 * Hỗ trợ cả same-account và cross-account (qua IAM role chaining).
 * Giảm đáng kể số lượng IAM roles cần quản lý, tránh chạm giới hạn quota IAM trong cluster lớn.
@@ -24,8 +21,5 @@ Các điểm chính cần nắm:
 
 Tính năng này đặc biệt hữu ích khi bạn có nhiều ứng dụng chạy trên cùng một IAM role nhưng cần giới hạn quyền khác nhau (ví dụ: một pod chỉ đọc S3 bucket cụ thể, pod khác chỉ gọi một số API nhất định).
 
-...Hình ảnh...
-
-...Link...
-
-...Hướng dẫn...
+- **Link bài viết trên Facebook:** [Link bài viết Blog 3 trên AWS Study Group](https://www.facebook.com/groups/awsstudygroupfcj)
+- **Ứng dụng thực tiễn:** Áp dụng Least Privilege qua session policies nhằm thu hẹp quyền IAM hiệu quả cho từng Pod mà không làm bùng nổ số lượng IAM role trong cụm Amazon EKS.

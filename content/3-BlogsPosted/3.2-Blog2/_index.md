@@ -1,13 +1,10 @@
 ---
 title: "Blog 2"
-date: 2024-01-01
-weight: 1
+date: 2026-11-26
+weight: 2
 chapter: false
 pre: " <b> 3.2. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
 # LAMBDA + EVENTBRIDGE: DAILY DATA AUTOMATION WITH EVENT-DRIVEN ARCHITECTURE
 
@@ -23,8 +20,5 @@ Key points to know:
 
 This pattern fits personal dashboards and lightweight aggregation pipelines where each data feed updates on its own schedule, degrades gracefully when an upstream API fails, and scales to new sources with minimal operational overhead.
 
-...Image...
-
-...Link...
-
-...Guide...
+- **Link to Facebook Post:** [Blog 2 Post on AWS Study Group](https://www.facebook.com/groups/awsstudygroupfcj)
+- **Architecture & Implementation:** Combines Amazon EventBridge Scheduler to trigger AWS Lambda asynchronously, stores normalized JSON payloads in Amazon S3, and distributes static content securely via Amazon CloudFront.

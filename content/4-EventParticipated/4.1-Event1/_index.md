@@ -1,4 +1,4 @@
----
+﻿---
 title: "Event 1"
 date: 2026-09-26
 weight: 1
@@ -13,7 +13,7 @@ pre: " <b> 4.1. </b> "
 - Introduce the Buildrathon program, its competition scope, and intended outcomes
 - Connect cloud and AI skills development with talent and infrastructure investment in Vietnam
 - Illustrate practical architectural patterns for organizing AI-powered applications
-- Foster technical networking among students, mentors, and industry engineers at Bitexco Financial Tower[cite: 2]
+- Foster technical networking among students, mentors, and industry engineers at Bitexco Financial Tower
 
 ### Speakers
 
@@ -30,7 +30,7 @@ pre: " <b> 4.1. </b> "
 
 #### Market Slack Bot Architecture Example
 
-Walked through a modular component diagram called **Market Slack Bot**, breaking down how an AI-powered bot operates across six layers[cite: 2]:
+Walked through a modular component diagram called **Market Slack Bot**, breaking down how an AI-powered bot operates across six layers:
 
 - **Slack**: Entry point receiving mentions, direct messages, and conversation context.
 - **Socket Mode / WebSocket**: Real-time connection layer linking Slack events to the bot workflow.
@@ -41,7 +41,7 @@ Walked through a modular component diagram called **Market Slack Bot**, breaking
 
 #### Architectural Evaluation Criteria for AI Applications
 
-- Demonstrated how to evaluate an AI system end-to-end by tracing four key flows: how requests enter the system, how responses are controlled, where conversation context is stored, and how scheduled tasks are organized[cite: 2].
+- Demonstrated how to evaluate an AI system end-to-end by tracing four key flows: how requests enter the system, how responses are controlled, where conversation context is stored, and how scheduled tasks are organized.
 
 ### Key Takeaways
 
@@ -52,30 +52,30 @@ Walked through a modular component diagram called **Market Slack Bot**, breaking
 
 #### Modular AI Application Architecture
 
-- **Four-pillar separation**: Organize an AI application cleanly into **request handling**, **processing**, **context management**, and **scheduled work**[cite: 2].
+- **Four-pillar separation**: Organize an AI application cleanly into **request handling**, **processing**, **context management**, and **scheduled work**.
 - **Controlled and structured execution**: Use response gates and structured JSON outputs (`print · JSON`) to keep AI workflows predictable and reliable.
 
 ### Applying to Work
 
-- **Apply four-pillar separation to the Ask First project**: Structure our anti-scam Telegram bot backend cleanly across webhook ingestion, message/AI processing, DynamoDB state/consent management, and SQS scheduled follow-up reminders[cite: 1, 2].
-- **Implement response gating and guardrails**: Enforce strict validation rules, local PII masking, and Bedrock Guardrails before delivering automated scam warnings to elderly users and linked family members[cite: 1].
-- **Manage conversation state reliably**: Use DynamoDB with TTL policies to track user consent, multi-message debouncing, and guardian alert acknowledgments without retaining stale context[cite: 1].
-- **Enforce structured data contracts**: Define strict JSON schemas between the Java backend and Python AI pipeline to ensure predictable integration and automated testing[cite: 1].
+- **Apply four-pillar separation to the Ask First project**: Structure our anti-scam Telegram bot backend cleanly across webhook ingestion, message/AI processing, DynamoDB state/consent management, and SQS scheduled follow-up reminders.
+- **Implement response gating and guardrails**: Enforce strict validation rules, local PII masking, and Bedrock Guardrails before delivering automated scam warnings to elderly users and linked family members.
+- **Manage conversation state reliably**: Use DynamoDB with TTL policies to track user consent, multi-message debouncing, and guardian alert acknowledgments without retaining stale context.
+- **Enforce structured data contracts**: Define strict JSON schemas between the Java backend and Python AI pipeline to ensure predictable integration and automated testing.
 
 ### Event Experience
 
-Attending the **“Buildrathon Kickoff: Code the Future with CMC Global”** on September 26, 2026 at Bitexco Financial Tower gave me a clear perspective on how real-world AI assistants are architected beyond simple prompt-response demos[cite: 2]. Key experiences included:
+Attending the **“Buildrathon Kickoff: Code the Future with CMC Global”** on September 26, 2026 at Bitexco Financial Tower gave me a clear perspective on how real-world AI assistants are architected beyond simple prompt-response demos. Key experiences included:
 
 #### Learning from industry leaders
 - **Nguyễn Gia Hưng** (Head of Solutions Architect, AWS Vietnam and Cambodia) shared valuable context on Vietnam's cloud and AI ecosystem and how Buildrathon bridges academic learning with industry expectations.
-- **Bùi Nhật Trường** (Tech Lead, CMC Global) walked through a concrete, production-oriented blueprint for an AI-powered Slack bot[cite: 2].
+- **Bùi Nhật Trường** (Tech Lead, CMC Global) walked through a concrete, production-oriented blueprint for an AI-powered Slack bot.
 
 #### Architectural and technical exposure
 - Analyzed the **Market Slack Bot** diagram to see how **Socket Mode / WebSocket**, **Response gates**, and **Memory** work together to control conversation flow.
-- Understood why separating **request handling**, **processing**, **context management**, and **scheduled work** makes AI bots easier to debug, scale, and maintain[cite: 2].
+- Understood why separating **request handling**, **processing**, **context management**, and **scheduled work** makes AI bots easier to debug, scale, and maintain.
 
 #### Networking and discussions
-- Connected with fellow First Cloud AI Journey interns and engineers at Bitexco Financial Tower, exchanging ideas on structuring backend workflows and state storage for AI-assisted applications[cite: 2].
+- Connected with fellow First Cloud AI Journey interns and engineers at Bitexco Financial Tower, exchanging ideas on structuring backend workflows and state storage for AI-assisted applications.
 
 #### Lessons learned
 - Starting with clear problem boundaries prevents over-engineering during hackathons and internships.

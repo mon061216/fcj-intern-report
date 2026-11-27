@@ -1,4 +1,4 @@
----
+﻿---
 title: "Sự kiện 2"
 date: 2026-09-29
 weight: 2
@@ -13,7 +13,7 @@ pre: " <b> 4.2. </b> "
 - Cập nhật chiến lược ứng dụng Cloud/AI quy mô quốc gia, doanh nghiệp và xu hướng hạ tầng số
 - Tìm hiểu kiến trúc nền tảng đằng sau các dịch vụ đám mây tin cậy ("invisible engineering")
 - Nắm vững quy trình kiểm chứng chất lượng, giám sát (observability) và bảo mật cho phần mềm có sự hỗ trợ của AI
-- Kết nối cùng cộng đồng AWS tại điểm cầu Watch Party TP. Hồ Chí Minh ở tòa nhà Bitexco Financial Tower[cite: 2]
+- Kết nối cùng cộng đồng AWS tại điểm cầu Watch Party TP. Hồ Chí Minh ở tòa nhà Bitexco Financial Tower
 
 ### Diễn giả
 
@@ -65,24 +65,24 @@ pre: " <b> 4.2. </b> "
 
 #### Chất lượng kỹ thuật và kiểm chứng
 
-- **Kiểm soát nợ kiểm chứng**: Kết hợp tốc độ phát triển với kiểm thử tự động có thể truy vết, log có cấu trúc và dữ liệu đo lường thực nghiệm[cite: 2].
+- **Kiểm soát nợ kiểm chứng**: Kết hợp tốc độ phát triển với kiểm thử tự động có thể truy vết, log có cấu trúc và dữ liệu đo lường thực nghiệm.
 - **Truy vết đầu cuối**: Gắn kết trực tiếp yêu cầu nghiệp vụ với bằng chứng kiểm thử trước khi đưa tính năng lên môi trường vận hành.
 
 #### Quản trị và trách nhiệm con người
 
-- **Bảo mật ngay từ thiết kế**: Tích hợp quản trị quyền truy cập tối thiểu và bộ lọc an toàn ngay trong luồng xử lý AI[cite: 2].
-- **Trách nhiệm giám sát của con người**: Luôn duy trì vai trò đánh giá rủi ro và phê duyệt của con người khi ứng dụng AI vào thực tế[cite: 2].
+- **Bảo mật ngay từ thiết kế**: Tích hợp quản trị quyền truy cập tối thiểu và bộ lọc an toàn ngay trong luồng xử lý AI.
+- **Trách nhiệm giám sát của con người**: Luôn duy trì vai trò đánh giá rủi ro và phê duyệt của con người khi ứng dụng AI vào thực tế.
 
 ### Áp dụng vào công việc
 
-- **Áp dụng IAM Least Privilege & Guardrails cho dự án Ask First**: Tách biệt IAM Role cho từng hàm Lambda (`webhook`, `worker`, `ai`), kết hợp ẩn danh thông tin cá nhân cục bộ (Mask PII) với Amazon Bedrock Guardrails và vô hiệu hóa (defang) các đường dẫn nghi ngờ[cite: 1].
-- **Ngăn ngừa validation debt bằng kiểm thử tự động**: Xây dựng bộ dữ liệu đánh giá chuẩn và kiểm thử hợp đồng (`AiContractTest`) trong CI/CD để đo lường độ phủ phát hiện lừa đảo, tỷ lệ báo nhầm và tính đúng đắn của JSON Schema[cite: 1].
-- **Tăng cường giám sát hệ thống (Observability)**: Thiết lập log có cấu trúc và cảnh báo CloudWatch để theo dõi độ trễ đầu cuối, giới hạn gọi Bedrock và cơ chế dự phòng[cite: 1].
-- **Duy trì yếu tố con người trong vòng lặp (Human-in-the-loop)**: Thiết kế cơ chế liên kết đồng thuận hai chiều (double opt-in) để người thân nhận cảnh báo kịp thời và chủ động gọi điện xác minh cho người cao tuổi[cite: 1].
+- **Áp dụng IAM Least Privilege & Guardrails cho dự án Ask First**: Tách biệt IAM Role cho từng hàm Lambda (`webhook`, `worker`, `ai`), kết hợp ẩn danh thông tin cá nhân cục bộ (Mask PII) với Amazon Bedrock Guardrails và vô hiệu hóa (defang) các đường dẫn nghi ngờ.
+- **Ngăn ngừa validation debt bằng kiểm thử tự động**: Xây dựng bộ dữ liệu đánh giá chuẩn và kiểm thử hợp đồng (`AiContractTest`) trong CI/CD để đo lường độ phủ phát hiện lừa đảo, tỷ lệ báo nhầm và tính đúng đắn của JSON Schema.
+- **Tăng cường giám sát hệ thống (Observability)**: Thiết lập log có cấu trúc và cảnh báo CloudWatch để theo dõi độ trễ đầu cuối, giới hạn gọi Bedrock và cơ chế dự phòng.
+- **Duy trì yếu tố con người trong vòng lặp (Human-in-the-loop)**: Thiết kế cơ chế liên kết đồng thuận hai chiều (double opt-in) để người thân nhận cảnh báo kịp thời và chủ động gọi điện xác minh cho người cao tuổi.
 
 ### Trải nghiệm tại sự kiện
 
-Tham dự chương trình **“AWS Cloud and AI Day Hanoi 2026 - HCMC Watch Party”** vào ngày 29/09/2026 tại tầng 26 tòa nhà Bitexco Financial Tower mang lại cho tôi góc nhìn toàn diện về cách xây dựng và vận hành hệ thống Cloud/AI an toàn, có kiểm chứng[cite: 2]. Những trải nghiệm nổi bật bao gồm:
+Tham dự chương trình **“AWS Cloud and AI Day Hanoi 2026 - HCMC Watch Party”** vào ngày 29/09/2026 tại tầng 26 tòa nhà Bitexco Financial Tower mang lại cho tôi góc nhìn toàn diện về cách xây dựng và vận hành hệ thống Cloud/AI an toàn, có kiểm chứng. Những trải nghiệm nổi bật bao gồm:
 
 #### Học hỏi từ các diễn giả hàng đầu
 - Tiếp thu những chia sẻ sâu sắc từ **TS. Werner Vogels** về cách các công nghệ nền tảng như Nitro, Firecracker và ClockBound đảm bảo tính cô lập và độ tin cậy ở quy mô lớn.
@@ -90,17 +90,17 @@ Tham dự chương trình **“AWS Cloud and AI Day Hanoi 2026 - HCMC Watch Part
 
 #### Tiếp cận góc nhìn kiến trúc và kỹ thuật
 - Hiểu rõ hơn các đánh đổi kỹ thuật xoay quanh môi trường thực thi Serverless, đồng bộ thời gian phân tán và bảo mật chủ động (Proactive AppSec).
-- Nắm vững cách kết hợp test tự động, log và telemetry làm bằng chứng đánh giá các thành phần AI[cite: 2].
+- Nắm vững cách kết hợp test tự động, log và telemetry làm bằng chứng đánh giá các thành phần AI.
 
 #### Khai thác công cụ hiện đại
 - Tìm hiểu cách các công cụ AI hỗ trợ phát triển phần mềm và kiểm tra bảo mật tự động giúp tăng năng suất khi đi kèm quy trình kiểm soát chặt chẽ.
 
 #### Giao lưu và thảo luận
-- Trao đổi trực tiếp cùng các bạn thực tập sinh First Cloud AI Journey tại điểm cầu TP. Hồ Chí Minh về nội dung các phiên keynote và hướng áp dụng vào dự án nhóm[cite: 2].
+- Trao đổi trực tiếp cùng các bạn thực tập sinh First Cloud AI Journey tại điểm cầu TP. Hồ Chí Minh về nội dung các phiên keynote và hướng áp dụng vào dự án nhóm.
 
 #### Bài học rút ra
-- Tốc độ phát triển nhanh nhưng thiếu kiểm chứng sẽ tạo ra nợ kỹ thuật; kiểm thử, log và metrics phải là bằng chứng bắt buộc trước khi phát hành[cite: 2].
-- Hệ thống AI đáng tin cậy đòi hỏi quản trị quyền truy cập chặt chẽ, bảo vệ dữ liệu riêng tư và trách nhiệm giám sát rõ ràng của con người[cite: 2].
+- Tốc độ phát triển nhanh nhưng thiếu kiểm chứng sẽ tạo ra nợ kỹ thuật; kiểm thử, log và metrics phải là bằng chứng bắt buộc trước khi phát hành.
+- Hệ thống AI đáng tin cậy đòi hỏi quản trị quyền truy cập chặt chẽ, bảo vệ dữ liệu riêng tư và trách nhiệm giám sát rõ ràng của con người.
 
 #### Một số hình ảnh tại sự kiện
 - ![Phần thuyết trình của diễn giả](/images/4-EventParticipated/event29_9_1.jpg)

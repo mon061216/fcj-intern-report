@@ -1,22 +1,18 @@
 ---
 title: "Các bài blogs đã đăng"
-date: 2024-01-01
+date: 2026-11-26
 weight: 3
 chapter: false
 pre: " <b> 3. </b> "
 ---
 
-{{% notice warning %}}  
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+Dưới đây là danh sách các bài viết kỹ thuật chuyên sâu được biên soạn và chia sẻ trên cộng đồng [AWS Study Group](https://www.facebook.com/groups/awsstudygroupfcj) trong suốt quá trình thực tập:
 
-Tại đây sẽ là phần liệt kê, giới thiệu các blogs mà các bạn đã đăng trên [AWS Study Group](https://www.facebook.com/groups/awsstudygroupfcj). Ví dụ:
+### [Blog 1 - KIỂM THỬ SERVERLESS & EVENT-DRIVEN TRÊN LOCAL VỚI LOCALSTACK VÀ JAVA 21](3.1-blog1/)
+Chia sẻ quy trình kiểm thử Local-First kết hợp LocalStack, Docker và Java 21 (AWS SDK v2) để kiểm chứng trọn vẹn luồng xử lý và cơ chế định tuyến lỗi Dead-Letter Queue (DLQ) trước khi triển khai lên đám mây với chi phí $0 bằng AWS SAM.
 
-###  [Blog 1 - SESSION POLICIES TRONG AMAZON EKS POD IDENTITY](3.1-blog1/)
-Blog này giới thiệu Amazon EKS Pod Identity vừa bổ sung tính năng session policies, cho phép bạn thu hẹp quyền IAM một cách linh hoạt và chính xác cho từng pod mà không cần tạo thêm nhiều IAM roles riêng biệt. Đây là bước tiến quan trọng giúp áp dụng nguyên tắc least privilege hiệu quả hơn trong môi trường Kubernetes quy mô lớn.
+### [Blog 2 - LAMBDA + EVENTBRIDGE: TỰ ĐỘNG CẬP NHẬT DỮ LIỆU HẰNG NGÀY VỚI EVENT-DRIVEN ARCHITECTURE](3.2-blog2/)
+Hướng dẫn xây dựng kiến trúc Serverless hướng sự kiện trên AWS kết nối Amazon EventBridge Scheduler, AWS Lambda và Amazon S3/CloudFront để tự động tổng hợp và cập nhật dữ liệu đa nguồn độc lập theo thời gian thực.
 
-###  [Blog 2 - ...](3.2-blog2/)
-Blog này giới thiệu Amazon EKS Pod Identity vừa bổ sung tính năng session policies, cho phép bạn thu hẹp quyền IAM một cách linh hoạt và chính xác cho từng pod mà không cần tạo thêm nhiều IAM roles riêng biệt. Đây là bước tiến quan trọng giúp áp dụng nguyên tắc least privilege hiệu quả hơn trong môi trường Kubernetes quy mô lớn.
-
-###  [Blog 3 - ...](3.3-blog3/)
-Blog này giới thiệu Amazon EKS Pod Identity vừa bổ sung tính năng session policies, cho phép bạn thu hẹp quyền IAM một cách linh hoạt và chính xác cho từng pod mà không cần tạo thêm nhiều IAM roles riêng biệt. Đây là bước tiến quan trọng giúp áp dụng nguyên tắc least privilege hiệu quả hơn trong môi trường Kubernetes quy mô lớn.
+### [Blog 3 - SESSION POLICIES TRONG AMAZON EKS POD IDENTITY](3.3-blog3/)
+Phân tích tính năng session policies mới trong Amazon EKS Pod Identity giúp áp dụng nguyên tắc đặc quyền tối thiểu (Least Privilege) chính xác cho từng pod mà không cần tạo dư thừa IAM role trong các cụm Kubernetes quy mô lớn.

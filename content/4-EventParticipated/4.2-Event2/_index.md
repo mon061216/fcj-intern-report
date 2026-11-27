@@ -1,4 +1,4 @@
----
+﻿---
 title: "Event 2"
 date: 2026-09-29
 weight: 2
@@ -13,7 +13,7 @@ pre: " <b> 4.2. </b> "
 - Explore national and enterprise cloud/AI adoption strategies and digital infrastructure trends
 - Understand foundational cloud infrastructure design ("invisible engineering") behind reliable, scalable services
 - Learn quality validation, observability, and security practices for AI-assisted software development
-- Connect with the AWS community in Ho Chi Minh City at the Bitexco Financial Tower watch party[cite: 2]
+- Connect with the AWS community in Ho Chi Minh City at the Bitexco Financial Tower watch party
 
 ### Speakers
 
@@ -65,24 +65,24 @@ pre: " <b> 4.2. </b> "
 
 #### Engineering Quality & Validation
 
-- **Eliminate validation debt**: Pair fast AI-assisted development with traceable automated tests, structured logs, and telemetry evidence[cite: 2].
+- **Eliminate validation debt**: Pair fast AI-assisted development with traceable automated tests, structured logs, and telemetry evidence.
 - **End-to-end traceability**: Connect requirements directly to verification results before shipping changes to production.
 
 #### Governance & Accountability
 
-- **Security by design**: Build least-privilege access governance and guardrails directly into AI workflows[cite: 2].
-- **Human accountability**: Maintain clear human oversight for risk assessment, release approvals, and critical user decisions[cite: 2].
+- **Security by design**: Build least-privilege access governance and guardrails directly into AI workflows.
+- **Human accountability**: Maintain clear human oversight for risk assessment, release approvals, and critical user decisions.
 
 ### Applying to Work
 
-- **Enforce least-privilege IAM & security guardrails in Ask First**: Scope separate IAM roles for the `webhook`, `worker`, and `ai` Lambda functions, combine local PII masking with Amazon Bedrock Guardrails, and defang suspicious URLs before displaying them[cite: 1].
-- **Prevent validation debt with automated evaluation**: Build a deterministic evaluation dataset and contract tests (`AiContractTest`) in CI/CD to measure recall, false-positive rates, and JSON schema compliance across prompt or model updates[cite: 1].
-- **Strengthen runtime observability**: Emit structured logs and custom CloudWatch metrics/alarms to monitor end-to-end latency, Bedrock throttling, and fallback behavior[cite: 1].
-- **Keep human-in-the-loop accountability**: Design the double opt-in guardian alert flow so linked family members receive timely warnings and verify suspicious transactions directly with elderly relatives[cite: 1].
+- **Enforce least-privilege IAM & security guardrails in Ask First**: Scope separate IAM roles for the `webhook`, `worker`, and `ai` Lambda functions, combine local PII masking with Amazon Bedrock Guardrails, and defang suspicious URLs before displaying them.
+- **Prevent validation debt with automated evaluation**: Build a deterministic evaluation dataset and contract tests (`AiContractTest`) in CI/CD to measure recall, false-positive rates, and JSON schema compliance across prompt or model updates.
+- **Strengthen runtime observability**: Emit structured logs and custom CloudWatch metrics/alarms to monitor end-to-end latency, Bedrock throttling, and fallback behavior.
+- **Keep human-in-the-loop accountability**: Design the double opt-in guardian alert flow so linked family members receive timely warnings and verify suspicious transactions directly with elderly relatives.
 
 ### Event Experience
 
-Attending the **“AWS Cloud and AI Day Hanoi 2026 - HCMC Watch Party”** on September 29, 2026 at the 26th floor of Bitexco Financial Tower provided a comprehensive perspective on scaling cloud and AI systems responsibly[cite: 2]. Key experiences included:
+Attending the **“AWS Cloud and AI Day Hanoi 2026 - HCMC Watch Party”** on September 29, 2026 at the 26th floor of Bitexco Financial Tower provided a comprehensive perspective on scaling cloud and AI systems responsibly. Key experiences included:
 
 #### Learning from highly skilled speakers
 - Gained insights from **Dr. Werner Vogels** on how foundational systems like Nitro, Firecracker, and ClockBound achieve isolation and reliability at cloud scale.
@@ -90,17 +90,17 @@ Attending the **“AWS Cloud and AI Day Hanoi 2026 - HCMC Watch Party”** on Se
 
 #### Hands-on technical exposure
 - Analyzed real architectural trade-offs around serverless compute isolation, distributed time synchronization, and proactive AppSec across the SDLC.
-- Understood how telemetry, logs, and automated test evidence work together to validate non-deterministic AI components[cite: 2].
+- Understood how telemetry, logs, and automated test evidence work together to validate non-deterministic AI components.
 
 #### Leveraging modern tools
 - Explored how AI-assisted development tools and proactive security agents accelerate delivery when paired with automated testing pipelines and guardrails.
 
 #### Networking and discussions
-- Connected with fellow First Cloud AI Journey interns and cloud enthusiasts at the HCMC watch party venue, exchanging notes on keynote takeaways and workshop architectures[cite: 2].
+- Connected with fellow First Cloud AI Journey interns and cloud enthusiasts at the HCMC watch party venue, exchanging notes on keynote takeaways and workshop architectures.
 
 #### Lessons learned
-- Development speed without traceable verification creates validation debt; tests, logs, and metrics must serve as release evidence[cite: 2].
-- Reliable AI systems require strong access governance, privacy protection, and explicit human accountability[cite: 2].
+- Development speed without traceable verification creates validation debt; tests, logs, and metrics must serve as release evidence.
+- Reliable AI systems require strong access governance, privacy protection, and explicit human accountability.
 
 #### Some event photos
 - ![Speaker's presentation](/images/4-EventParticipated/event29_9_1.jpg)

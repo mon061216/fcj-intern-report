@@ -1,22 +1,18 @@
 ---
 title: "Blogs Posted"
-date: 2024-01-01
+date: 2026-11-26
 weight: 3
 chapter: false
 pre: " <b> 3. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
+Below is the list of in-depth technical blogs authored and shared with the [AWS Study Group](https://www.facebook.com/groups/awsstudygroupfcj) community during the internship:
 
-This section will list and introduce the blogs you have posted to [AWS Study Group](https://www.facebook.com/groups/awsstudygroupfcj). For example:
+### [Blog 1 - LOCAL SERVERLESS & EVENT-DRIVEN TESTING WITH LOCALSTACK AND JAVA 21](3.1-blog1/)
+Details a local-first testing workflow combining LocalStack, Docker, and Java 21 (AWS SDK v2) to thoroughly validate standard event flows and Dead-Letter Queue (DLQ) routing at zero cost before deploying via AWS SAM.
 
-###  [Blog 1 - SESSION POLICIES IN AMAZON EKS POD IDENTITY](3.1-blog1/)
-This blog introduces the newly added session policies feature in Amazon EKS Pod Identity, which allows you to narrow IAM permissions flexibly and precisely for each pod without needing to create multiple separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
+### [Blog 2 - LAMBDA + EVENTBRIDGE: DAILY DATA AUTOMATION WITH EVENT-DRIVEN ARCHITECTURE](3.2-blog2/)
+Demonstrates an event-driven serverless architecture on AWS connecting Amazon EventBridge Scheduler, AWS Lambda, and Amazon S3/CloudFront to automatically aggregate and render multi-source data feeds independently in near real-time.
 
-###  [Blog 2 - ...](3.2-blog2/)
-This blog introduces the newly added session policies feature in Amazon EKS Pod Identity, which allows you to narrow IAM permissions flexibly and precisely for each pod without needing to create multiple separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
-
-###  [Blog 3 - ...](3.3-blog3/)
-This blog introduces the newly added session policies feature in Amazon EKS Pod Identity, which allows you to narrow IAM permissions flexibly and precisely for each pod without needing to create multiple separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
+### [Blog 3 - SESSION POLICIES IN AMAZON EKS POD IDENTITY](3.3-blog3/)
+Explores the session policies feature in Amazon EKS Pod Identity to enforce the Principle of Least Privilege down to individual pods without bloating IAM roles in large-scale Kubernetes clusters.
