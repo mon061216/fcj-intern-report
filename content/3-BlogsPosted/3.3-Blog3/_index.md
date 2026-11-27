@@ -126,5 +126,5 @@ AWS Glue charges per DPU (Data Processing Unit) per second (with a 1-minute mini
 ---
 
 ### Post Links
-- **Facebook Community Post:** [Post shared on AWS Study Group](https://www.facebook.com/groups/awsstudygroupfcj)
+- **Facebook Community Post:** [AWS Study Group VN | Designing a Cost-Optimized IoT Data Pipeline (MQTT → AWS IoT Core → Glue → S3) for Small-Scale Projects](https://www.facebook.com/groups/awsstudygroupfcj/permalink/2351133745651584/)
 - **Tags:** `#AWS #AWSStudyGroup #IoT #Serverless #DataEngineering #AWSIoTCore #AWSGlue #AmazonS3 #Athena`

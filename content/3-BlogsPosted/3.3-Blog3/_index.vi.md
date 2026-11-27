@@ -127,5 +127,5 @@ AWS Glue tính phí theo DPU (Data Processing Unit) trên mỗi giây chạy (t�
 ---
 
 ### Liên kết bài viết
-- **Link bài viết trên Facebook:** [Bài viết chia sẻ trên nhóm AWS Study Group](https://www.facebook.com/groups/awsstudygroupfcj)
+- **Link bài viết trên Facebook:** [AWS Study Group VN | Thiết kế luồng dữ liệu IoT (MQTT → AWS IoT Core → Glue → S3) tối ưu chi phí cho đồ án quy mô nhỏ](https://www.facebook.com/groups/awsstudygroupfcj/permalink/2351133745651584/)
 - **Từ khóa:** `#AWS #AWSStudyGroup #IoT #Serverless #DataEngineering #AWSIoTCore #AWSGlue #AmazonS3 #Athena`
