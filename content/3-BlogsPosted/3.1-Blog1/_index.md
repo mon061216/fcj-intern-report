@@ -19,7 +19,12 @@ Key points covered in the post:
 - **End-to-End Happy Path & DLQ Verification:** Testing valid payloads to verify DynamoDB state persistence and message deletion from the main queue, alongside intentionally malformed payloads to confirm retry exhaustion and automatic routing to the **SQS DLQ**.
 - **Safer & Faster AWS SAM Deployment:** Catching missing parameters, null-handling issues, and queue misconfigurations at `$0` local cost before packaging and deploying the stack to AWS Cloud.
 
-![Local-First Serverless Testing Architecture](images/blog1-localstack-architecture.png)
+### Architecture & Illustrations
 
-- **Facebook Post Link:** [Link bài viết Blog 1 trên AWS Study Group](https://www.facebook.com/groups/awsstudygroupfcj)
+![Local-First Serverless Testing Architecture](/images/3-BlogsPosted/Blog1_architecture.jpg)
+
+![Post shared on AWS Study Group](/images/3-BlogsPosted/Blog1_fb.png)
+
+### Post Links
+- **Facebook Post Link:** [AWS Study Group VN | Testing Serverless & Event-Driven Flows (SQS + DLQ + DynamoDB) at $0 on Local with LocalStack + Java 21](https://www.facebook.com/groups/awsstudygroupfcj/posts/2349976352433990/?notif_id=1795670899925015&notif_t=group_post_approved&ref=notif)
 - **Reference Setup & Code Snippets:** Included `docker-compose.yml` for LocalStack (`:4566`) and Java 21 `SqsClient` endpoint configuration in the post.

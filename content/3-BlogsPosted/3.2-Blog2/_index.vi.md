@@ -20,5 +20,12 @@ Các điểm chính cần nắm:
 
 Mô hình này phù hợp cho các trang tổng hợp thông tin cá nhân cần cập nhật theo nhiều nhịp khác nhau, giữ tính ổn định khi một nguồn gián đoạn và dễ mở rộng thêm nguồn mới với chi phí thấp.
 
-- **Link bài viết trên Facebook:** [Link bài viết Blog 2 trên AWS Study Group](https://www.facebook.com/groups/awsstudygroupfcj)
+### Sơ đồ kiến trúc & Hình ảnh minh họa
+
+![Sơ đồ kiến trúc Lambda + EventBridge](/images/3-BlogsPosted/Blog2_architecture.jpg)
+
+![Bài đăng chia sẻ trên AWS Study Group](/images/3-BlogsPosted/Blog2_fb.png)
+
+### Liên kết bài viết
+- **Link bài viết trên Facebook:** [AWS Study Group VN | Lambda + EventBridge: Tự động cập nhật dữ liệu hằng ngày với Event-Driven Architecture](https://www.facebook.com/groups/660548818043427/?multi_permalinks=2345717436193215)
 - **Mô hình kiến trúc & Triển khai:** Sử dụng Amazon EventBridge Scheduler kích hoạt AWS Lambda bất đồng bộ, lưu trữ tệp chuẩn hóa JSON trên Amazon S3 và phân phối tĩnh an toàn qua Amazon CloudFront.

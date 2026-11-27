@@ -19,7 +19,12 @@ Các nội dung chính trong bài viết:
 - **Kiểm thử cả luồng hợp lệ lẫn luồng lỗi DLQ:** Gửi payload chuẩn để xác nhận việc ghi dữ liệu vào DynamoDB và xóa bản tin khỏi hàng đợi chính, đồng thời gửi payload lỗi cố ý để kiểm chứng cơ chế retry và định tuyến tự động sang **SQS DLQ**.
 - **Triển khai AWS SAM an toàn và tiết kiệm hơn:** Phát hiện sớm các lỗi thiếu tham số, lỗi xử lý ngoại lệ hoặc sai cấu hình hàng đợi với chi phí `$0` trên local trước khi đóng gói và deploy lên AWS Cloud.
 
-![Sơ đồ kiến trúc kiểm thử Local-First Serverless](images/blog1-localstack-architecture.png)
+### Sơ đồ kiến trúc & Hình ảnh minh họa
 
-- **Link bài viết trên Facebook:** [Link bài viết Blog 1 trên AWS Study Group](https://www.facebook.com/groups/awsstudygroupfcj)
+![Sơ đồ kiến trúc kiểm thử Local-First Serverless](/images/3-BlogsPosted/Blog1_architecture.jpg)
+
+![Bài đăng chia sẻ trên AWS Study Group](/images/3-BlogsPosted/Blog1_fb.png)
+
+### Liên kết bài viết
+- **Link bài viết trên Facebook:** [AWS Study Group VN | Test luồng Serverless & Event-Driven (SQS + DLQ + DynamoDB) không tốn $0 trên local với LocalStack + Java 21](https://www.facebook.com/groups/awsstudygroupfcj/posts/2349976352433990/?notif_id=1795670899925015&notif_t=group_post_approved&ref=notif)
 - **Cấu hình & Mã nguồn minh họa:** Bao gồm file `docker-compose.yml` khởi chạy LocalStack (`:4566`) và đoạn mã cấu hình endpoint cho `SqsClient` trong Java 21.

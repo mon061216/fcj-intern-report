@@ -20,5 +20,12 @@ Key points to know:
 
 This pattern fits personal dashboards and lightweight aggregation pipelines where each data feed updates on its own schedule, degrades gracefully when an upstream API fails, and scales to new sources with minimal operational overhead.
 
-- **Link to Facebook Post:** [Blog 2 Post on AWS Study Group](https://www.facebook.com/groups/awsstudygroupfcj)
+### Architecture & Illustrations
+
+![Lambda + EventBridge Architecture](/images/3-BlogsPosted/Blog2_architecture.jpg)
+
+![Post shared on AWS Study Group](/images/3-BlogsPosted/Blog2_fb.png)
+
+### Post Links
+- **Facebook Post Link:** [AWS Study Group VN | Lambda + EventBridge: Daily Data Automation with Event-Driven Architecture](https://www.facebook.com/groups/660548818043427/?multi_permalinks=2345717436193215)
 - **Architecture & Implementation:** Combines Amazon EventBridge Scheduler to trigger AWS Lambda asynchronously, stores normalized JSON payloads in Amazon S3, and distributes static content securely via Amazon CloudFront.
