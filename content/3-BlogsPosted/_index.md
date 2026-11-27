@@ -14,5 +14,5 @@ Details a local-first testing workflow combining LocalStack, Docker, and Java 21
 ### [Blog 2 - LAMBDA + EVENTBRIDGE: DAILY DATA AUTOMATION WITH EVENT-DRIVEN ARCHITECTURE](3.2-blog2/)
 Demonstrates an event-driven serverless architecture on AWS connecting Amazon EventBridge Scheduler, AWS Lambda, and Amazon S3/CloudFront to automatically aggregate and render multi-source data feeds independently in near real-time.
 
-### [Blog 3 - SESSION POLICIES IN AMAZON EKS POD IDENTITY](3.3-blog3/)
-Explores the session policies feature in Amazon EKS Pod Identity to enforce the Principle of Least Privilege down to individual pods without bloating IAM roles in large-scale Kubernetes clusters.
+### [Blog 3 - DESIGNING A COST-OPTIMIZED IOT DATA PIPELINE (MQTT → AWS IOT CORE → GLUE → S3) FOR SMALL-SCALE PROJECTS](3.3-blog3/)
+Solves the "small files nightmare" in IoT telemetry on AWS: leveraging IoT Core Rule Engine, S3 Lifecycle rules, and AWS Glue ETL to compact millions of small JSON records into columnar Apache Parquet, cutting ~85% in storage footprint and ~98% in Athena query costs.
